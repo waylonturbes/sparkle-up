@@ -31,6 +31,10 @@
       defer
       src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"
     ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/vee-validate@2.x/dist/vee-validate.js"
+    ></script>
     <script defer src="index.js"></script>
     <title>Sparkle Up</title>
   </head>
@@ -43,11 +47,55 @@
 
         <v-main>
           <v-container fluid>
-            <p>Something!</p>
+            <v-form ref="sparklingWaterForm" v-model="valid" lazy-validation>
+              <v-text-field
+                v-model="flavor"
+                :rules="flavorRules"
+                label="Flavor"
+                required
+              ></v-text-field>
+
+              <v-select
+                class="pt-4"
+                v-model="selectBrand"
+                :items="brands"
+                :rules="brandRules"
+                label="Brand"
+                required
+              ></v-select>
+
+              <v-select
+                class="pt-4"
+                v-model.number="selectScore"
+                :items="scores"
+                :rules="scoreRules"
+                label="Score"
+                required
+              ></v-select>
+
+              <v-text-field
+                v-model="review"
+                :rules="reviewRules"
+                label="Review"
+                required
+              ></v-text-field>
+              <div class="pt-4">
+                <v-btn
+                  class="success mr-4"
+                  type="submit"
+                  :disabled="!valid"
+                  @click.prevent="submit"
+                >
+                  Add Sparkling Water
+                </v-btn>
+
+                <v-btn color="error" @click.prevent="clear"> Reset </v-btn>
+              </div>
+            </v-form>
           </v-container>
         </v-main>
 
-        <v-footer app class="d-flex" padless="true">
+        <v-footer app class="d-flex" padless>
           <v-card
             flat
             tile
@@ -57,7 +105,7 @@
             <v-card-text>
               <v-btn
                 v-for="icon in icons"
-                :key="icon"
+                :key="icon.svg"
                 class="mx-4 white--text"
                 :href="icon.link"
                 target="_blank"

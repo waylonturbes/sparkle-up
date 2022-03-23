@@ -24,6 +24,31 @@ let sparkleUp = new Vue({
       },
       { svg: "mdi-github", link: "https://github.com/waylonturbes" },
     ],
+    valid: true,
+    flavor: "",
+    flavorRules: [(v) => !!v || "Flavor is required"],
+    selectScore: null,
+    scores: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    scoreRules: [(v) => !!v || "Score is required"],
+    selectBrand: null,
+    brands: [
+      "La Croix",
+      "bubly",
+      "Polar",
+      "Waterloo",
+      "Schweppes",
+      "Simply Balanced",
+      "Spindrift",
+      "Perrier",
+      "Adirondack",
+      "Perrier",
+    ],
+    brandRules: [(v) => !!v || "Brand is required"],
+    review: "",
+    reviewRules: [
+      (v) => !!v || "Review is required",
+      (v) => (v && v.length > 20) || "Must be 20 or more character",
+    ],
     sparklingWaters: [
       {
         flavor: "Lemon",
@@ -76,5 +101,13 @@ let sparkleUp = new Vue({
         rating: 8,
       },
     ],
+  },
+  methods: {
+    submit() {
+      this.$refs.sparklingWaterForm.validate();
+    },
+    clear() {
+      this.$refs.sparklingWaterForm.reset();
+    },
   },
 });
