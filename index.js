@@ -14,5 +14,47 @@ let sparkleUp = new Vue({
   }),
   data: {
     appName: "Sparkle Up",
+    sparklingWaters: [
+      {
+        flavor: "Lemon",
+        brand: "La Croix",
+      },
+      {
+        flavor: "Grape",
+        brand: "bubly",
+      },
+      {
+        flavor: "Orange",
+        brand: "Polar",
+      },
+      {
+        flavor: "Cherry",
+        brand: "Waterloo",
+      },
+      {
+        flavor: "Green Apple",
+        brand: "Schweppes",
+      },
+      {
+        flavor: "Lime",
+        brand: "Simply Balanced",
+      },
+      {
+        flavor: "Cucumber",
+        brand: "Spindrift",
+      },
+      {
+        flavor: "Pink Grapefruit",
+        brand: "Perrier",
+      },
+      {
+        flavor: "Citrus",
+        brand: "Adirondack",
+      },
+      {
+        flavor: "Pomegranate Lemonade",
+        brand: "Perrier",
+      },
+    ],
   },
 });
