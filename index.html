@@ -4,6 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
+      rel="stylesheet"
+    />
     <script
       defer
       type="text/javascript"
@@ -14,9 +26,22 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
     ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"
+    ></script>
+    <script defer src="index.js"></script>
     <title>Sparkle Up</title>
   </head>
   <body>
-    <div id="sparkle-up"></div>
+    <div id="sparkle-up">
+      <v-app>
+        <v-main>
+          <v-container>
+            <v-btn elevation="2" color="primary">BUTTON</v-btn>
+          </v-container>
+        </v-main>
+      </v-app>
+    </div>
   </body>
 </html>
