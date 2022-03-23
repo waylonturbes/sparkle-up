@@ -37,8 +37,8 @@
   <body>
     <div id="sparkle-up">
       <v-app>
-        <v-app-bar app class="text-align-center">
-          <h1 class="text-h3 font-weight-bold">{{appName}}</h1>
+        <v-app-bar app class="primary text-align-center p-6">
+          <h1 class="text-h3 font-weight-bold white--text">{{appName}}</h1>
         </v-app-bar>
 
         <v-main>
@@ -47,8 +47,13 @@
           </v-container>
         </v-main>
 
-        <v-footer app class="">
-          <v-card flat tile class="primary lighten-1 white--text text-center">
+        <v-footer app class="d-flex" padless="true">
+          <v-card
+            flat
+            tile
+            class="primary white--text text-center"
+            width="100%"
+          >
             <v-card-text>
               <v-btn
                 v-for="icon in icons"
@@ -62,7 +67,7 @@
               </v-btn>
             </v-card-text>
 
-            <v-card-text class="white--text pt-0 text-body1">
+            <v-card-text class="white--text pt-0 text-body1 font-weight-medium">
               I hope you enjoyed using Sparkle Up as much as I enjoyed building
               it! This app was built with Vue & Vuetify for experimenting
               purposes. If you want to, you can find me on the following
