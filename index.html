@@ -54,15 +54,15 @@
                 v-for="icon in icons"
                 :key="icon"
                 class="mx-4 white--text"
+                :href="icon.link"
+                target="_blank"
                 icon
               >
-                <a :href="icon.link" target="_blank">
-                  <v-icon size="24px"> {{ icon.svg }} </v-icon>
-                </a>
+                <v-icon size="30px"> {{ icon.svg }} </v-icon>
               </v-btn>
             </v-card-text>
 
-            <v-card-text class="white--text pt-0">
+            <v-card-text class="white--text pt-0 text-body1">
               I hope you enjoyed using Sparkle Up as much as I enjoyed building
               it! This app was built with Vue & Vuetify for experimenting
               purposes. If you want to, you can find me on the following
@@ -71,7 +71,7 @@
 
             <v-divider></v-divider>
 
-            <v-card-text class="white--text">
+            <v-card-text class="white--text text-h6">
               {{ new Date().getFullYear() }} — <strong>{{ appName }}</strong>
             </v-card-text>
           </v-card>
