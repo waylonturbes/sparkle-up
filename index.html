@@ -37,7 +37,12 @@
   </head>
   <body>
     <v-app id="sparkle-up" class="flex-auto">
-      <v-app-bar app short class="primary flex-auto" style="position: sticky">
+      <v-app-bar
+        app
+        short
+        class="primary"
+        style="position: sticky; display: flex; align-items: center"
+      >
         <h1 class="text-h4 font-weight-bold white--text">{{appName}}</h1>
       </v-app-bar>
 
@@ -114,7 +119,7 @@
                   >Sparkling Waters</v-card-title
                 >
               </v-banner>
-              <v-list two-line>
+              <v-list three-line>
                 <v-list-item-group
                   v-for="(water, index) in sparklingWaters"
                   :key="index"
@@ -136,7 +141,7 @@
                       >
                     </v-list-item-content>
 
-                    <v-list-item-action>
+                    <v-list-item-action style="align-self: center">
                       <v-btn icon>
                         <v-icon color="grey darken-1">mdi-delete</v-icon>
                       </v-btn>
