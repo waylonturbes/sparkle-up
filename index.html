@@ -83,13 +83,16 @@
                 required
               ></v-select>
 
-              <v-text-field
+              <v-textarea
                 filled
+                auto-grow
+                rows="3"
+                row-height="30"
                 v-model="review"
                 :rules="reviewRules"
                 label="Review"
                 required
-              ></v-text-field>
+              ></v-textarea>
               <div class="button-group">
                 <v-btn
                   class="success"
