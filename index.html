@@ -16,7 +16,7 @@
       href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="styles.css" />
     <script
       defer
       type="text/javascript"
@@ -42,62 +42,67 @@
   <body>
     <div id="sparkle-up">
       <v-app>
-        <v-app-bar app class="primary text-align-center app-bar-custom">
-          <h1 class="text-h3 font-weight-bold white--text">{{appName}}</h1>
+        <v-app-bar app short class="primary">
+          <h1 class="text-h4 font-weight-bold white--text">{{appName}}</h1>
         </v-app-bar>
 
         <v-main>
-          <v-container>
-            <v-form
-              ref="sparklingWaterForm"
-              v-model="valid"
-              class="sparkle-form"
-              lazy-validation
-            >
-              <v-text-field
-                v-model="flavor"
-                :rules="flavorRules"
-                label="Flavor"
-                required
-              ></v-text-field>
+          <v-container class="main-content">
+            <div class="sparkle-form-container">
+              <v-form
+                ref="sparklingWaterForm"
+                v-model="valid"
+                class="form"
+                lazy-validation
+              >
+                <h3 class="text-h5 font-weight-medium text-center pb-2">
+                  &#129380; Add a sparkling water &#10024;
+                </h3>
+                <v-text-field
+                  v-model="flavor"
+                  :rules="flavorRules"
+                  label="Flavor"
+                  required
+                ></v-text-field>
 
-              <v-select
-                class="pt-4"
-                v-model="selectBrand"
-                :items="brands"
-                :rules="brandRules"
-                label="Brand"
-                required
-              ></v-select>
+                <v-select
+                  class="pt-4"
+                  v-model="selectBrand"
+                  :items="brands"
+                  :rules="brandRules"
+                  label="Brand"
+                  required
+                ></v-select>
 
-              <v-select
-                class="pt-4"
-                v-model.number="selectScore"
-                :items="scores"
-                :rules="scoreRules"
-                label="Score"
-                required
-              ></v-select>
+                <v-select
+                  class="pt-4"
+                  v-model.number="selectScore"
+                  :items="scores"
+                  :rules="scoreRules"
+                  label="Score"
+                  required
+                ></v-select>
 
-              <v-text-field
-                v-model="review"
-                :rules="reviewRules"
-                label="Review"
-                required
-              ></v-text-field>
-              <div class="pt-4">
-                <v-btn
-                  class="success mr-4"
-                  type="submit"
-                  :disabled="!valid"
-                  @click.prevent="submit"
-                >
-                  Add Sparkling Water
-                </v-btn>
+                <v-text-field
+                  v-model="review"
+                  :rules="reviewRules"
+                  label="Review"
+                  required
+                ></v-text-field>
+                <div class="pt-4">
+                  <v-btn
+                    class="success mr-4"
+                    type="submit"
+                    :disabled="!valid"
+                    @click.prevent="submit"
+                  >
+                    Add Sparkling Water
+                  </v-btn>
 
-                <v-btn color="error" @click.prevent="clear"> Reset </v-btn>
-              </div>
-            </v-form>
+                  <v-btn color="error" @click.prevent="clear"> Reset </v-btn>
+                </div>
+              </v-form>
+            </div>
           </v-container>
         </v-main>
 

@@ -286,15 +286,26 @@ progress {
 .custom-app-bar {
   height: auto;
 }
+.form {
+  display: flex;
+  flex-direction: column;
+  max-height: 600px;
+}
+.sparkle-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app-bar-custom {
+  padding: 10px;
+}
 .main-content {
   display: flex;
-  flex-direction: row;
+  flex: auto;
   height: 100%;
-  justify-content: space-evenly;
   align-content: center;
+  justify-content: center;
 }
-.sparkle-form {
-  dispaly: flex;
-  max-width: 400px;
-  height: auto;
+.text-center {
+  text-align: center;
 }
