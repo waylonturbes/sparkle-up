@@ -22,7 +22,16 @@ let sparkleUp = new Vue({
   },
   methods: {
     submit() {
-      this.$refs.sparklingWaterForm.validate();
+      let valid = this.$refs.sparklingWaterForm.validate();
+      if (valid === true) {
+        this.sparklingWaters.push({
+          flavor: this.flavor,
+          brand: this.brand,
+          rating: this.rating,
+          review: this.review,
+        });
+        this.$refs.sparklingWaterForm.reset();
+      }
     },
     clear() {
       this.$refs.sparklingWaterForm.reset();
