@@ -26,8 +26,8 @@ let sparkleUp = new Vue({
       if (valid === true) {
         this.sparklingWaters.push({
           flavor: this.flavor,
-          brand: this.brand,
-          rating: this.rating,
+          brand: this.selectBrand,
+          rating: this.selectScore,
           review: this.review,
         });
         this.$refs.sparklingWaterForm.reset();
