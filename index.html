@@ -35,19 +35,25 @@
       defer
       src="https://cdn.jsdelivr.net/npm/vee-validate@2.x/dist/vee-validate.js"
     ></script>
-    <script defer src="index.js"></script>
+    <script defer src="data.mjs" type="module"></script>
+    <script defer src="main.mjs" type="module"></script>
     <title>Sparkle Up</title>
   </head>
   <body>
     <div id="sparkle-up">
       <v-app>
-        <v-app-bar app class="primary text-align-center p-6">
+        <v-app-bar app class="primary text-align-center app-bar-custom">
           <h1 class="text-h3 font-weight-bold white--text">{{appName}}</h1>
         </v-app-bar>
 
         <v-main>
-          <v-container fluid>
-            <v-form ref="sparklingWaterForm" v-model="valid" lazy-validation>
+          <v-container>
+            <v-form
+              ref="sparklingWaterForm"
+              v-model="valid"
+              class="sparkle-form"
+              lazy-validation
+            >
               <v-text-field
                 v-model="flavor"
                 :rules="flavorRules"
