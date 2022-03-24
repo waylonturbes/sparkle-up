@@ -31,10 +31,6 @@
       defer
       src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"
     ></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/vee-validate@2.x/dist/vee-validate.js"
-    ></script>
     <script defer src="data.mjs" type="module"></script>
     <script defer src="main.mjs" type="module"></script>
     <title>Sparkle Up</title>
@@ -108,14 +104,24 @@
               </div>
             </v-form>
 
-            <v-card elevation="3" outlined>
-              <v-card-title inset>Sparkling Waters</v-card-title>
+            <v-card
+              elevation="3"
+              outlined
+              class="overflow-y-auto"
+              max-height="500"
+              max-width="500"
+            >
+              <v-banner sticky="true" style="background-color: white">
+                <v-card-title style="padding: 0px"
+                  >Sparkling Waters</v-card-title
+                >
+              </v-banner>
               <v-list two-line>
                 <v-list-item-group
                   v-for="(water, index) in sparklingWaters"
                   :key="index"
                 >
-                  <v-list-item>
+                  <v-list-item inactive>
                     <v-list-item-content>
                       <v-list-item-title
                         class="pb-1"
@@ -134,7 +140,7 @@
 
                     <v-list-item-action>
                       <v-btn icon>
-                        <v-icon color="grey">mdi-delete</v-icon>
+                        <v-icon color="grey darken-1">mdi-delete</v-icon>
                       </v-btn>
                     </v-list-item-action>
                   </v-list-item>
