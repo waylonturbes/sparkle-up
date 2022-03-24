@@ -297,13 +297,14 @@ progress {
   width: 320px;
   height: 100%;
 }
-.sparkle-form-container {
+.main-content-inner-container {
   display: flex;
+  padding: 30px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .app-bar-custom {
-  padding: 10px;
+  position: relative;
 }
 .main-content {
   display: flex;
@@ -321,4 +322,30 @@ progress {
 }
 .footer {
   padding: 0px;
+  position: relative;
+}
+.sparkling-water-card {
+  max-width: 800px;
+  max-height: 600px;
+}
+
+@media (max-width: 1300px) {
+  .sparkling-water-card {
+    max-width: 500px;
+    max-height: 600px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .main-content-inner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .sparkling-water-card {
+    margin-top: 60px;
+    max-width: 80%;
+    max-height: 600px;
+  }
 }

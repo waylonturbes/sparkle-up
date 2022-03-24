@@ -37,13 +37,13 @@
   </head>
   <body>
     <v-app id="sparkle-up" class="flex-auto">
-      <v-app-bar app short class="primary flex-auto">
+      <v-app-bar app short class="primary flex-auto" style="position: sticky">
         <h1 class="text-h4 font-weight-bold white--text">{{appName}}</h1>
       </v-app-bar>
 
-      <v-main class="flex-auto">
+      <v-main class="flex-auto" style="padding: 0px">
         <v-container class="main-content flex-auto" fluid>
-          <div class="sparkle-form-container flex-auto">
+          <div class="main-content-inner-container flex-auto">
             <v-form
               ref="sparklingWaterForm"
               v-model="valid"
@@ -107,11 +107,9 @@
             <v-card
               elevation="3"
               outlined
-              class="overflow-y-auto"
-              max-height="500"
-              max-width="500"
+              class="overflow-y-auto sparkling-water-card"
             >
-              <v-banner sticky="true" style="background-color: white">
+              <v-banner :sticky="true" style="background-color: #fff">
                 <v-card-title style="padding: 0px"
                   >Sparkling Waters</v-card-title
                 >
@@ -155,7 +153,7 @@
         </v-container>
       </v-main>
 
-      <v-footer app class="d-flex footer">
+      <v-footer app :fixed="false" class="d-flex footer">
         <v-card flat tile class="primary white--text text-center" width="100%">
           <v-card-text>
             <v-btn
