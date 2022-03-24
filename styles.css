@@ -286,15 +286,22 @@ progress {
 .custom-app-bar {
   height: auto;
 }
+.flex-auto {
+  display: flex;
+  flex: auto;
+}
 .form {
   display: flex;
   flex-direction: column;
-  max-height: 600px;
+  justify-content: space-evenly;
+  width: 320px;
+  height: 100%;
 }
 .sparkle-form-container {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 440px;
 }
 .app-bar-custom {
   padding: 10px;
@@ -303,9 +310,16 @@ progress {
   display: flex;
   flex: auto;
   height: 100%;
-  align-content: center;
+  align-items: center;
   justify-content: center;
 }
 .text-center {
   text-align: center;
+}
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+.footer {
+  padding: 0px;
 }
