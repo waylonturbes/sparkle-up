@@ -301,7 +301,6 @@ progress {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 440px;
 }
 .app-bar-custom {
   padding: 10px;

@@ -93,6 +93,7 @@
                 label="Review"
                 required
               ></v-textarea>
+
               <div class="button-group">
                 <v-btn
                   class="success"
@@ -106,6 +107,44 @@
                 <v-btn color="error" @click.prevent="clear"> Reset </v-btn>
               </div>
             </v-form>
+
+            <v-card elevation="3" outlined>
+              <v-card-title inset>Sparkling Waters</v-card-title>
+              <v-list two-line>
+                <v-list-item-group
+                  v-for="(water, index) in sparklingWaters"
+                  :key="index"
+                >
+                  <v-list-item>
+                    <v-list-item-content>
+                      <v-list-item-title
+                        class="pb-1"
+                        v-text="water.brand"
+                      ></v-list-item-title>
+
+                      <v-list-item-subtitle class="text--primary pb-1"
+                        >{{water.flavor}}&nbsp; - &nbsp;{{water.rating}} /
+                        10</v-list-item-subtitle
+                      >
+
+                      <v-list-item-subtitle
+                        >{{water.review}}</v-list-item-subtitle
+                      >
+                    </v-list-item-content>
+
+                    <v-list-item-action>
+                      <v-btn icon>
+                        <v-icon color="grey">mdi-delete</v-icon>
+                      </v-btn>
+                    </v-list-item-action>
+                  </v-list-item>
+                  <v-divider
+                    v-if="index < sparklingWaters.length - 1"
+                    :key="index"
+                  ></v-divider>
+                </v-list-item-group>
+              </v-list>
+            </v-card>
           </div>
         </v-container>
       </v-main>
