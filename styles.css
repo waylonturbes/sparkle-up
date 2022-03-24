@@ -283,9 +283,6 @@ progress {
 /* # =================================================================
    # Custom Styling
    # ================================================================= */
-.custom-app-bar {
-  height: auto;
-}
 .flex-auto {
   display: flex;
   flex: auto;
@@ -302,9 +299,6 @@ progress {
   padding: 30px;
   align-items: center;
   justify-content: space-evenly;
-}
-.app-bar-custom {
-  position: relative;
 }
 .main-content {
   display: flex;
@@ -325,7 +319,7 @@ progress {
   position: relative;
 }
 .sparkling-water-card {
-  max-width: 800px;
+  width: 800px;
   max-height: 600px;
 }
 

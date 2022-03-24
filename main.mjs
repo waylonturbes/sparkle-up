@@ -36,5 +36,8 @@ let sparkleUp = new Vue({
     clear() {
       this.$refs.sparklingWaterForm.reset();
     },
+    deleteDrink(index) {
+      this.sparklingWaters.splice(index, 1);
+    },
   },
 });
