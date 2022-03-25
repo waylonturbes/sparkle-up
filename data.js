@@ -16,7 +16,8 @@ export const data = {
   selectScore: null,
   scores: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   scoreRules: [(v) => !!v || "Score is required"],
-  selectBrand: null,
+  selectBrand: "",
+  otherBrand: "",
   brands: [
     "La Croix",
     "bubly",
@@ -28,6 +29,7 @@ export const data = {
     "Perrier",
     "Adirondack",
     "Perrier",
+    "Other",
   ],
   brandRules: [(v) => !!v || "Brand is required"],
   review: "",

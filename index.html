@@ -31,8 +31,8 @@
       defer
       src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"
     ></script>
-    <script defer src="data.mjs" type="module"></script>
-    <script defer src="main.mjs" type="module"></script>
+    <script defer src="data.js" type="module"></script>
+    <script defer src="main.js" type="module"></script>
     <title>Sparkle Up</title>
   </head>
   <body>
@@ -79,6 +79,15 @@
                 label="Brand"
                 required
               ></v-select>
+
+              <v-text-field
+                v-if="selectBrand === 'Other'"
+                filled
+                v-model="otherBrand"
+                :rules="brandRules"
+                label="Other Brand"
+                required
+              ></v-text-field>
 
               <v-select
                 filled

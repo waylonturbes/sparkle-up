@@ -1,4 +1,4 @@
-import { data } from "./data.mjs";
+import { data } from "./data.js";
 
 let sparkleUp = new Vue({
   el: "#sparkle-up",
@@ -27,7 +27,8 @@ let sparkleUp = new Vue({
         if (this.editMode === true) {
           let updatedDrink = {
             flavor: this.flavor,
-            brand: this.selectBrand,
+            brand:
+              this.selectBrand === "Other" ? this.otherBrand : this.selectBrand,
             rating: this.selectScore,
             review: this.review,
           };
@@ -44,7 +45,8 @@ let sparkleUp = new Vue({
         } else {
           this.sparklingWaters.push({
             flavor: this.flavor,
-            brand: this.selectBrand,
+            brand:
+              this.selectBrand === "Other" ? this.otherBrand : this.selectBrand,
             rating: this.selectScore,
             review: this.review,
           });
@@ -63,9 +65,18 @@ let sparkleUp = new Vue({
       this.editItemIndex = index;
       this.editItem = this.sparklingWaters.splice(index, 1)[0];
       this.flavor = this.editItem.flavor;
-      this.selectBrand = this.editItem.brand;
       this.selectScore = this.editItem.rating;
       this.review = this.editItem.review;
+      for (let brand of this.brands) {
+        if (brand === this.editItem.brand) {
+          this.selectBrand = brand;
+          this.otherBrand = "";
+          return;
+        } else {
+          this.selectBrand = "Other";
+          this.otherBrand = this.editItem.brand;
+        }
+      }
     },
     cancelEditDrink() {
       this.sparklingWaters.splice(this.editItemIndex, 0, this.editItem);
