@@ -25,7 +25,20 @@ let sparkleUp = new Vue({
       let valid = this.$refs.sparklingWaterForm.validate();
       if (valid === true) {
         if (this.editMode === true) {
-          this.sparklingWaters.splice(this.editItemIndex, 0, this.editItem);
+          let updatedDrink = {
+            flavor: this.flavor,
+            brand: this.selectBrand,
+            rating: this.selectScore,
+            review: this.review,
+          };
+          this.sparklingWaters.splice(this.editItemIndex, 0, updatedDrink);
+          this.editItemIndex = null;
+          this.editItem = {
+            flavor: "",
+            brand: "",
+            rating: null,
+            review: "",
+          };
           this.editMode = false;
           this.clear();
         } else {
