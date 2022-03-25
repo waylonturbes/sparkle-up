@@ -30,7 +30,7 @@ export const data = {
   review: "",
   reviewRules: [
     (v) => !!v || "Review is required",
-    (v) => (v && v.length > 20) || "Must be 20 or more character",
+    (v) => (v && v.length < 100) || "Must be under 100 characters",
   ],
   sparklingWaters: [
     {
