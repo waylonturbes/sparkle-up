@@ -173,16 +173,27 @@
                       class="d-flex flex-row ml-1"
                       style="align-self: center"
                     >
-                      <v-btn v-if="editMode === false" icon class="mr-1">
-                        <v-icon
-                          color="grey darken-1"
-                          @click.prevent="editDrink(index)"
-                        >
-                          mdi-pencil
-                        </v-icon>
-                      </v-btn>
+                      <v-tooltip
+                        v-if="editMode === false"
+                        bottom
+                        color="primary"
+                      >
+                        <template v-slot:activator="{ on, attrs }">
+                          <v-btn icon class="mr-1">
+                            <v-icon
+                              v-on="on"
+                              v-bind="attrs"
+                              color="grey darken-1"
+                              @click.prevent="editDrink(index)"
+                            >
+                              mdi-pencil
+                            </v-icon>
+                          </v-btn>
+                        </template>
+                        <div class="text-center">Edit</div>
+                      </v-tooltip>
 
-                      <v-tooltip v-else bottom color="error">
+                      <v-tooltip v-else bottom color="info">
                         <template v-slot:activator="{ on, attrs }">
                           <v-btn
                             v-bind="attrs"
@@ -192,21 +203,29 @@
                             icon
                             class="mr-1 no-hover"
                           >
-                            <v-icon plain>
-                              mdi-pencil-off
-                            </v-icon>
+                            <v-icon> mdi-pencil-off </v-icon>
                           </v-btn>
                         </template>
-                        <div class="text-center">You're already editing</br> a sparkling water</div>
+                        <div class="text-center">
+                          You're already editing<br />
+                          a sparkling water
+                        </div>
                       </v-tooltip>
 
-                      <v-btn icon class="ml-1">
-                        <v-icon
-                          color="grey darken-1"
-                          @click.prevent="deleteDrink(index)"
-                          >mdi-delete</v-icon
-                        >
-                      </v-btn>
+                      <v-tooltip bottom color="error">
+                        <template v-slot:activator="{ on, attrs }">
+                          <v-btn icon class="ml-1">
+                            <v-icon
+                              v-bind="attrs"
+                              v-on="on"
+                              color="grey darken-1"
+                              @click.prevent="deleteDrink(index)"
+                              >mdi-delete</v-icon
+                            >
+                          </v-btn>
+                        </template>
+                        <div class="text-center">Delete</div>
+                      </v-tooltip>
                     </v-list-item-action>
                   </v-list-item>
 

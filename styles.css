@@ -323,7 +323,7 @@ progress {
   max-height: 600px;
 }
 .no-hover:hover {
-  opacity: 0.66;
+  opacity: 0.62;
 }
 
 @media (max-width: 1300px) {
