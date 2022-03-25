@@ -322,6 +322,9 @@ progress {
   width: 800px;
   max-height: 600px;
 }
+.no-hover:hover {
+  opacity: 0.66;
+}
 
 @media (max-width: 1300px) {
   .sparkling-water-card {
