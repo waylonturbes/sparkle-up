@@ -24,13 +24,19 @@ let sparkleUp = new Vue({
     submit() {
       let valid = this.$refs.sparklingWaterForm.validate();
       if (valid === true) {
-        this.sparklingWaters.push({
-          flavor: this.flavor,
-          brand: this.selectBrand,
-          rating: this.selectScore,
-          review: this.review,
-        });
-        this.$refs.sparklingWaterForm.reset();
+        if (editMode === true) {
+          this.sparklingWaters.splice(index, 1, this.editItem);
+          this.editMode = false;
+          this.clear();
+        } else {
+          this.sparklingWaters.push({
+            flavor: this.flavor,
+            brand: this.selectBrand,
+            rating: this.selectScore,
+            review: this.review,
+          });
+          this.clear();
+        }
       }
     },
     clear() {
@@ -38,6 +44,23 @@ let sparkleUp = new Vue({
     },
     deleteDrink(index) {
       this.sparklingWaters.splice(index, 1);
+    },
+    editDrink(index) {
+      this.editMode = true;
+      this.editItemIndex = index;
+      this.editItem = this.sparklingWaters.splice(index, 1);
+      
+    },
+    cancelEditDrink() {
+      this.editItemIndex = null;
+      this.editMode = false;
+      this.editItem = {
+        flavor: "",
+        brand: "",
+        rating: null,
+        review: "",
+      };
+      this.clear();
     },
   },
 });

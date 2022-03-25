@@ -9,7 +9,10 @@ export const data = {
   ],
   valid: true,
   flavor: "",
-  flavorRules: [(v) => !!v || "Flavor is required"],
+  flavorRules: [
+    (v) => !!v || "Flavor is required",
+    (v) => (v && v.length < 100) || "Must be under 100 characters",
+  ],
   selectScore: null,
   scores: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   scoreRules: [(v) => !!v || "Score is required"],
@@ -94,4 +97,12 @@ export const data = {
       review: "Great, but there is still room for improvement. Keep it up!",
     },
   ],
+  editMode: null,
+  editItemIndex: null,
+  editItem: {
+    flavor: "",
+    brand: "",
+    rating: null,
+    review: "",
+  },
 };

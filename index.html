@@ -100,18 +100,26 @@
                 required
               ></v-textarea>
 
-              <div class="button-group">
+              <div class="button-group d-flex">
                 <v-btn
                   class="success"
                   type="submit"
                   :disabled="!valid"
                   @click.prevent="submit"
                 >
-                  Add Sparkling Water
+                  <span v-if="editMode === true"> Update Sparkling Water </span>
+                  <span v-else> Add Sparkling Water </span>
                 </v-btn>
 
                 <v-btn color="error" @click.prevent="clear"> Reset </v-btn>
               </div>
+              <v-btn
+                v-if="editMode === true"
+                class="info mt-4"
+                @click.prevent="clear"
+              >
+                Cancel Edit
+              </v-btn>
             </v-form>
 
             <v-card elevation="3" class="overflow-y-auto sparkling-water-card">
@@ -162,7 +170,7 @@
                     </v-list-item-content>
 
                     <v-list-item-action
-                      class="d-flex flex-row ma-0"
+                      class="d-flex flex-row ml-1"
                       style="align-self: center"
                     >
                       <v-btn icon class="mr-1">
