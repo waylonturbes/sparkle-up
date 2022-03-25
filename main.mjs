@@ -24,8 +24,8 @@ let sparkleUp = new Vue({
     submit() {
       let valid = this.$refs.sparklingWaterForm.validate();
       if (valid === true) {
-        if (editMode === true) {
-          this.sparklingWaters.splice(index, 1, this.editItem);
+        if (this.editMode === true) {
+          this.sparklingWaters.splice(this.editItemIndex, 0, this.editItem);
           this.editMode = false;
           this.clear();
         } else {
@@ -48,10 +48,14 @@ let sparkleUp = new Vue({
     editDrink(index) {
       this.editMode = true;
       this.editItemIndex = index;
-      this.editItem = this.sparklingWaters.splice(index, 1);
-      
+      this.editItem = this.sparklingWaters.splice(index, 1)[0];
+      this.flavor = this.editItem.flavor;
+      this.selectBrand = this.editItem.brand;
+      this.selectScore = this.editItem.rating;
+      this.review = this.editItem.review;
     },
     cancelEditDrink() {
+      this.sparklingWaters.splice(this.editItemIndex, 0, this.editItem);
       this.editItemIndex = null;
       this.editMode = false;
       this.editItem = {

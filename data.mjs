@@ -97,7 +97,7 @@ export const data = {
       review: "Great, but there is still room for improvement. Keep it up!",
     },
   ],
-  editMode: null,
+  editMode: false,
   editItemIndex: null,
   editItem: {
     flavor: "",

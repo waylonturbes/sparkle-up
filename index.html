@@ -114,9 +114,9 @@
                 <v-btn color="error" @click.prevent="clear"> Reset </v-btn>
               </div>
               <v-btn
-                v-if="editMode === true"
+                v-show="editMode === true"
                 class="info mt-4"
-                @click.prevent="clear"
+                @click.prevent="cancelEditDrink"
               >
                 Cancel Edit
               </v-btn>
