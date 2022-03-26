@@ -1,7 +1,6 @@
 # Sparkle Up
 
-Sparkle Up is a small app built with Vue and Vuetify. It allows users
-Foobar is a Python library for dealing with word pluralization.
+Sparkle Up is a small app built with Vue and Vuetify.
 
 ## Usage
 
@@ -21,6 +20,8 @@ Now that the app is running, you can use the _Add a sparkling water_ form to add
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. This app is a work in progress, so many features and fixes can/will be made.
+
+If you wish to edit sparkling waters that have already been made, you can do so by clicking on the pencil icon on the right hand side of a sparkling water list item, and the _Add a sparkling water_ form will fill with all the sparkling water values.
 
 ## License
 
