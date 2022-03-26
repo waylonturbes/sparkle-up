@@ -6,8 +6,7 @@ Sparkle Up is a small app built with Vue and Vuetify.
 
 First you will have to clone down the repository. Once you have completed that, enter the cloned down project directory and run it in your browser.
 
-I like to run the app using [serve](https://github.com/vercel/serve) from Vercel.
-Here is an example using the HTTPS clone method:
+You can run the app using [serve](https://github.com/vercel/serve) from Vercel.
 
 ```bash
 git clone https://github.com/waylonturbes/sparkle-up.git
@@ -15,7 +14,11 @@ cd sparkle-up
 npx serve
 ```
 
-Now that the app is running, you can use the _Add a sparkling water_ form to add new sparkling waters. &#10024; Sparkle Up &#10024;
+If you are using VSCode, you can use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension by Ritwick Dey to run this.
+
+Now that the app is running, you can use the _Add a sparkling water_ form to add new sparkling waters.
+
+&#10024; Sparkle Up &#10024;
 
 ## Contributing
 
