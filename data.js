@@ -1,4 +1,4 @@
-export const data = {
+export default {
   appName: "Sparkle Up",
   icons: [
     {
