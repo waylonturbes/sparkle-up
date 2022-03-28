@@ -56,14 +56,16 @@
         :disabled="!valid"
         @click.prevent="submit"
       >
-        <span v-if="editMode === true"> Update Sparkling Water </span>
+        <span v-if="$store.state.editMode === true">
+          Update Sparkling Water
+        </span>
         <span v-else> Add Sparkling Water </span>
       </v-btn>
 
       <v-btn color="info" @click.prevent="clear"> Reset </v-btn>
     </div>
     <v-btn
-      v-show="editMode === true"
+      v-show="$store.state.editMode === true"
       class="info mt-4"
       @click.prevent="cancelEditDrink"
     >
@@ -75,5 +77,71 @@
 <script>
 export default {
   name: "SparklingWaterForm",
+  data() {
+    return {
+      valid: true,
+      flavor: "",
+      flavorRules: [
+        (v) => !!v || "Flavor is required",
+        (v) => (v && v.length < 100) || "Must be under 100 characters",
+      ],
+      selectScore: null,
+      scores: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      scoreRules: [(v) => !!v || "Score is required"],
+      selectBrand: "",
+      otherBrand: "",
+      brands: [
+        "La Croix",
+        "bubly",
+        "Polar",
+        "Waterloo",
+        "Schweppes",
+        "Simply Balanced",
+        "Spindrift",
+        "Perrier",
+        "Adirondack",
+        "Perrier",
+        "Other",
+      ],
+      brandRules: [(v) => !!v || "Brand is required"],
+      review: "",
+      reviewRules: [
+        (v) => !!v || "Review is required",
+        (v) => (v && v.length < 100) || "Must be under 100 characters",
+      ],
+    };
+  },
+  methods: {
+    submit() {
+      let valid = this.$refs.sparklingWaterForm.validate();
+      let updatedDrink = {
+        flavor: this.flavor,
+        brand:
+          this.selectBrand === "Other" ? this.otherBrand : this.selectBrand,
+        rating: this.selectScore,
+        review: this.review,
+      };
+      if (valid === true) {
+        if (this.$store.state.editMode === true) {
+          this.$store.commit("editSparklingWater", updatedDrink);
+          this.$store.commit("setEditItemIndex", null);
+          this.$store.commit("setEditItem", {
+            flavor: "",
+            brand: "",
+            rating: null,
+            review: "",
+          });
+          this.$store.commit("setEditMode", false);
+          this.clear();
+        } else {
+          this.$store.commit("addSparklingWater", updatedDrink);
+          this.clear();
+        }
+      }
+    },
+    clear() {
+      this.$refs.sparklingWaterForm.reset();
+    },
+  },
 };
 </script>
