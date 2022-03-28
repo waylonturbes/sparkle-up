@@ -4,7 +4,6 @@
       <v-card-title style="padding: 0px">Sparkling Waters</v-card-title>
     </v-banner>
     <v-list three-line>
-      <!-- If list is completely empty -->
       <v-list-item v-if="sparklingWaters.length === 0" inactive :ripple="false">
         <v-list-item-content>
           <v-list-item-title class="pb-1">
@@ -16,7 +15,6 @@
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
-      <!-- If list has any items -->
       <v-list-item-group
         v-else
         v-for="(water, index) in sparklingWaters"
