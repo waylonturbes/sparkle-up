@@ -1,6 +1,6 @@
-import { data } from "./data.js";
+import data from "./data.js";
 
-let sparkleUp = new Vue({
+var app = new Vue({
   el: "#sparkle-up",
   vuetify: new Vuetify({
     theme: {
@@ -17,9 +17,7 @@ let sparkleUp = new Vue({
       },
     },
   }),
-  data: {
-    ...data,
-  },
+  data: data,
   methods: {
     submit() {
       let valid = this.$refs.sparklingWaterForm.validate();
