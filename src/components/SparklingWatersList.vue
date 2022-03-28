@@ -4,7 +4,11 @@
       <v-card-title style="padding: 0px">Sparkling Waters</v-card-title>
     </v-banner>
     <v-list three-line>
-      <v-list-item v-if="sparklingWaters.length === 0" inactive :ripple="false">
+      <v-list-item
+        v-if="sparklingWaterList.length === 0"
+        inactive
+        :ripple="false"
+      >
         <v-list-item-content>
           <v-list-item-title class="pb-1">
             There are currently no sparkling waters saved.
@@ -17,7 +21,7 @@
       </v-list-item>
       <v-list-item-group
         v-else
-        v-for="(water, index) in sparklingWaters"
+        v-for="(water, index) in sparklingWaterList"
         :key="index"
       >
         <v-list-item inactive :ripple="false">
@@ -39,7 +43,7 @@
             class="d-flex flex-row ml-1"
             style="align-self: center"
           >
-            <v-tooltip v-if="editMode === false" bottom color="primary">
+            <v-tooltip v-if="localEditMode === false" bottom color="primary">
               <template v-slot:activator="{ on, attrs }">
                 <v-btn icon class="mr-1">
                   <v-icon
@@ -92,7 +96,7 @@
         </v-list-item>
 
         <v-divider
-          v-if="index < sparklingWaters.length - 1"
+          v-if="index < sparklingWaterList.length - 1"
           :key="index"
         ></v-divider>
       </v-list-item-group>
@@ -103,5 +107,11 @@
 <script>
 export default {
   name: "SparklingWatersList",
+  data() {
+    return {
+      localEditMode: this.$store.state.editMode,
+      sparklingWaterList: this.$store.state.sparklingWaters,
+    };
+  },
 };
 </script>

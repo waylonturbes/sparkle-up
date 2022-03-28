@@ -56,16 +56,14 @@
         :disabled="!valid"
         @click.prevent="submit"
       >
-        <span v-if="$store.state.editMode === true">
-          Update Sparkling Water
-        </span>
+        <span v-if="localEditMode === true"> Update Sparkling Water </span>
         <span v-else> Add Sparkling Water </span>
       </v-btn>
 
       <v-btn color="info" @click.prevent="clear"> Reset </v-btn>
     </div>
     <v-btn
-      v-show="$store.state.editMode === true"
+      v-show="localEditMode === true"
       class="info mt-4"
       @click.prevent="cancelEditDrink"
     >
@@ -79,6 +77,7 @@ export default {
   name: "SparklingWaterForm",
   data() {
     return {
+      localEditMode: this.$store.state.editMode, // for conditional rendering
       valid: true,
       flavor: "",
       flavorRules: [
@@ -112,6 +111,22 @@ export default {
     };
   },
   methods: {
+    updateFormForEditMode() {
+      if (this.$store.state.editMode) {
+        this.flavor = this.$store.state.editItem.flavor;
+        this.score = this.$store.state.editItem.rating;
+        this.review = this.$store.state.editItem.review;
+        for (let brand of this.brands) {
+          if (brand === this.$store.state.editItem.brand) {
+            this.selectBrand = brand;
+            this.otherBrand = "";
+          } else {
+            this.selectBrand = "Other";
+            this.otherBrand = this.$store.state.editItem.brand;
+          }
+        }
+      }
+    },
     submit() {
       let valid = this.$refs.sparklingWaterForm.validate();
       let updatedDrink = {
@@ -123,7 +138,7 @@ export default {
       };
       if (valid === true) {
         if (this.$store.state.editMode === true) {
-          this.$store.commit("editSparklingWater", updatedDrink);
+          this.$store.commit("updateSparklingWater", updatedDrink);
           this.$store.commit("setEditItemIndex", null);
           this.$store.commit("setEditItem", {
             flavor: "",

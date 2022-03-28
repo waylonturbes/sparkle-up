@@ -8,7 +8,7 @@ export default {
   setEditItemIndex(state, index) {
     state.editItemIndex = index;
   },
-  editSparklingWater(state, sparklingWater) {
+  updateSparklingWater(state, sparklingWater) {
     state.sparklingWaters.splice(state.editItemIndex, 0, sparklingWater);
   },
   addSparklingWater(state, sparklingWater) {
