@@ -5,27 +5,25 @@ export default {
   setEditItem(state, item) {
     state.editItem = item;
   },
-  setEditItemIndex(state, index) {
-    state.editItemIndex = index;
-  },
   cancelEdit(state) {
     state.sparklingWaters.splice(state.editItemIndex, 0, state.editItem);
-    state.editItemIndex = null;
     state.editMode = false;
     state.editItem = {
+      index: null,
       flavor: "",
       brand: "",
+      otherBrand: "",
       rating: null,
       review: "",
     };
   },
   updateSparklingWater(state, sparklingWater) {
-    state.sparklingWaters.splice(state.editItemIndex, 0, sparklingWater);
+    state.sparklingWaters.splice(state.editItem.index, 0, sparklingWater);
   },
   addSparklingWater(state, sparklingWater) {
     state.sparklingWaters.push(sparklingWater);
   },
-  removeSparklingWater(state, newList) {
-    state.sparklingWaters = newList;
+  removeSparklingWater(state, index) {
+    state.sparklingWaters.splice(index, 1);
   },
 };

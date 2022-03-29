@@ -13,7 +13,7 @@
 
     <v-select
       filled
-      v-model="selectBrand"
+      v-model="sparklingWater.brand"
       :items="brands"
       :rules="brandRules"
       label="Brand"
@@ -21,9 +21,9 @@
     ></v-select>
 
     <v-text-field
-      v-if="selectBrand === 'Other'"
+      v-if="sparklingWater.brand === 'Other'"
       filled
-      v-model="otherBrand"
+      v-model="sparklingWater.otherBrand"
       :rules="brandRules"
       label="Other Brand"
       required
@@ -31,7 +31,7 @@
 
     <v-select
       filled
-      v-model.number="selectScore"
+      v-model.number="sparklingWater.rating"
       :items="scores"
       :rules="scoreRules"
       label="Score"
@@ -43,7 +43,7 @@
       auto-grow
       rows="3"
       row-height="30"
-      v-model="review"
+      v-model="sparklingWater.review"
       :rules="reviewRules"
       label="Review"
       required
@@ -73,22 +73,26 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "SparklingWaterForm",
-  data() {
+  data: function () {
     return {
-      formEditMode: this.$store.state.editMode, // for conditional rendering
       valid: true,
-      flavor: "",
+      sparklingWater: {
+        flavor: "",
+        brand: "",
+        otherBrand: "",
+        rating: null,
+        review: "",
+      },
       flavorRules: [
         (v) => !!v || "Flavor is required",
         (v) => (v && v.length < 100) || "Must be under 100 characters",
       ],
-      selectScore: null,
       scores: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       scoreRules: [(v) => !!v || "Score is required"],
-      selectBrand: "",
-      otherBrand: "",
       brands: [
         "La Croix",
         "bubly",
@@ -103,46 +107,35 @@ export default {
         "Other",
       ],
       brandRules: [(v) => !!v || "Brand is required"],
-      review: "",
       reviewRules: [
         (v) => !!v || "Review is required",
         (v) => (v && v.length < 100) || "Must be under 100 characters",
       ],
     };
   },
-  methods: {
-    updateFormForEditMode() {
-      if (this.$store.state.editMode) {
-        this.flavor = this.$store.state.editItem.flavor;
-        this.score = this.$store.state.editItem.rating;
-        this.review = this.$store.state.editItem.review;
-        for (let brand of this.brands) {
-          if (brand === this.$store.state.editItem.brand) {
-            this.selectBrand = brand;
-            this.otherBrand = "";
-          } else {
-            this.selectBrand = "Other";
-            this.otherBrand = this.$store.state.editItem.brand;
-          }
-        }
+  computed: mapState({
+    formEditMode: (state) => state.editMode,
+    updateForm(state) {
+      if (state.editMode) {
+        return (this.sparklingWater = state.editItem);
       }
     },
+  }),
+  methods: {
     submit() {
       let valid = this.$refs.sparklingWaterForm.validate();
-      let updatedDrink = {
-        flavor: this.flavor,
-        brand:
-          this.selectBrand === "Other" ? this.otherBrand : this.selectBrand,
-        rating: this.selectScore,
-        review: this.review,
-      };
+      let updatedDrink = this.sparklingWater;
       if (valid === true) {
         if (this.$store.state.editMode === true) {
-          this.$store.commit("updateSparklingWater", updatedDrink);
-          this.$store.commit("setEditItemIndex", null);
+          this.$store.commit("updateSparklingWater", {
+            ...this.$store.state.editItem,
+            updatedDrink,
+          });
           this.$store.commit("setEditItem", {
+            index: null,
             flavor: "",
             brand: "",
+            otherBrand: "",
             rating: null,
             review: "",
           });

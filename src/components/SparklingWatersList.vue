@@ -105,19 +105,25 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "SparklingWatersList",
-  data() {
-    return {
-      listEditMode: this.$store.state.editMode,
-      sparklingWaterList: this.$store.state.sparklingWaters,
-    };
+  data: function () {
+    return {};
   },
+  computed: mapState({
+    listEditMode: (state) => state.editMode,
+    sparklingWaterList: (state) => state.sparklingWaters,
+  }),
   methods: {
     deleteDrink(index) {
-      const newList = this.sparklingWaterList;
-      newList.splice(index, 1);
-      this.$store.commit("removeSparklingWater", newList);
+      this.$store.commit("removeSparklingWater", index);
+    },
+    editDrink(index) {
+      const [sparklingWater] = this.sparklingWaterList.splice(index, 1);
+      this.$store.commit("setEditMode", true);
+      this.$store.commit("setEditItem", { index: index, ...sparklingWater });
     },
   },
 };
