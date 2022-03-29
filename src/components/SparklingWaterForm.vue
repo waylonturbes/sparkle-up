@@ -65,7 +65,7 @@
     <v-btn
       v-show="formEditMode === true"
       class="info mt-4"
-      @click.prevent="cancelEditDrink"
+      @click.prevent="cancelEditDrink(editItem)"
     >
       Cancel Edit
     </v-btn>
@@ -81,6 +81,7 @@ export default {
     return {
       valid: true,
       sparklingWater: {
+        index: null, // this is for editing a new sparkling water later
         flavor: "",
         brand: "",
         otherBrand: "",
@@ -113,23 +114,26 @@ export default {
       ],
     };
   },
-  computed: mapState({
-    formEditMode: (state) => state.editMode,
-    updateForm(state) {
-      if (state.editMode) {
-        return (this.sparklingWater = { ...state.editItem });
-      }
+  computed: {
+    ...mapState({
+      formEditMode: (state) => state.editMode,
+      editItem: (state) => state.editItem,
+      sparklingWaters: (state) => state.sparklingWaters,
+    }),
+  },
+  watch: {
+    editItem() {
+      this.sparklingWater = { ...this.editItem };
     },
-  }),
+  },
   methods: {
     submit() {
-      let valid = this.$refs.sparklingWaterForm.validate();
-      let updatedDrink = this.sparklingWater;
+      const valid = this.$refs.sparklingWaterForm.validate();
       if (valid === true) {
-        if (this.$store.state.editMode === true) {
+        if (this.formEditMode) {
           this.$store.commit("updateSparklingWater", {
-            ...this.$store.state.editItem,
-            updatedDrink,
+            ...this.sparklingWater,
+            index: this.editItem.index,
           });
           this.$store.commit("setEditItem", {
             index: null,
@@ -142,7 +146,9 @@ export default {
           this.$store.commit("setEditMode", false);
           this.clear();
         } else {
-          this.$store.commit("addSparklingWater", updatedDrink);
+          this.$store.commit("addSparklingWater", {
+            ...this.sparklingWater,
+          });
           this.clear();
         }
       }

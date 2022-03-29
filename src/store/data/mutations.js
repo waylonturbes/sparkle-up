@@ -6,7 +6,7 @@ export default {
     state.editItem = item;
   },
   cancelEdit(state) {
-    state.sparklingWaters.splice(state.editItemIndex, 0, state.editItem);
+    state.sparklingWaters.splice(state.editItem.index, 0, state.editItem);
     state.editMode = false;
     state.editItem = {
       index: null,
@@ -17,11 +17,13 @@ export default {
       review: "",
     };
   },
-  updateSparklingWater(state, sparklingWater) {
-    state.sparklingWaters.splice(state.editItem.index, 0, sparklingWater);
+  updateSparklingWater(state, updatedWater) {
+    state.sparklingWaters.splice(state.editItem.index, 0, {
+      ...updatedWater,
+    });
   },
-  addSparklingWater(state, sparklingWater) {
-    state.sparklingWaters.push({ ...sparklingWater });
+  addSparklingWater(state, water) {
+    state.sparklingWaters.push(water);
   },
   removeSparklingWater(state, index) {
     state.sparklingWaters.splice(index, 1);

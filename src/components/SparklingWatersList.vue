@@ -122,8 +122,8 @@ export default {
     },
     editDrink(index) {
       const [sparklingWater] = this.sparklingWaterList.splice(index, 1);
+      this.$store.commit("setEditItem", { ...sparklingWater, index });
       this.$store.commit("setEditMode", true);
-      this.$store.commit("setEditItem", { index: index, ...sparklingWater });
     },
   },
 };
