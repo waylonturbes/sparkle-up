@@ -5,7 +5,7 @@
     </h3>
     <v-text-field
       filled
-      v-model="flavor"
+      v-model="sparklingWater.flavor"
       :rules="flavorRules"
       label="Flavor"
       required
@@ -117,7 +117,7 @@ export default {
     formEditMode: (state) => state.editMode,
     updateForm(state) {
       if (state.editMode) {
-        return (this.sparklingWater = state.editItem);
+        return (this.sparklingWater = { ...state.editItem });
       }
     },
   }),

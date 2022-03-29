@@ -21,7 +21,7 @@ export default {
     state.sparklingWaters.splice(state.editItem.index, 0, sparklingWater);
   },
   addSparklingWater(state, sparklingWater) {
-    state.sparklingWaters.push(sparklingWater);
+    state.sparklingWaters.push({ ...sparklingWater });
   },
   removeSparklingWater(state, index) {
     state.sparklingWaters.splice(index, 1);
