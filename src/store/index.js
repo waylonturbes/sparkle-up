@@ -6,13 +6,11 @@ import { state, mutations } from "./data";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state() {
+  state: function () {
     return state;
   },
   getters: {},
-  mutations() {
-    return mutations;
-  },
+  mutations,
   actions: {},
   modules: {},
 });
