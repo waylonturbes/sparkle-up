@@ -36,15 +36,16 @@
     <v-main>
       <router-view />
     </v-main>
+    <sparkle-up-footer />
   </v-app>
 </template>
 
 <script>
-export default {
-  name: "App",
+import SparkleUpFooter from "./components/SparkleUpFooter.vue";
 
-  data: () => ({
-    //
-  }),
+export default {
+  components: { SparkleUpFooter },
+  name: "App",
+  data: () => ({}),
 };
 </script>
