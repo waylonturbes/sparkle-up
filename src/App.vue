@@ -1,8 +1,10 @@
 <template>
   <v-app>
     <sparkle-up-nav-bar />
-    <v-main>
-      <router-view />
+    <v-main class="flex-auto">
+      <v-container class="flex-auto">
+        <router-view />
+      </v-container>
     </v-main>
     <sparkle-up-footer />
   </v-app>
