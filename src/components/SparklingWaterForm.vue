@@ -56,14 +56,14 @@
         :disabled="!valid"
         @click.prevent="submit"
       >
-        <span v-if="localEditMode === true"> Update Sparkling Water </span>
+        <span v-if="formEditMode === true"> Update Sparkling Water </span>
         <span v-else> Add Sparkling Water </span>
       </v-btn>
 
       <v-btn color="info" @click.prevent="clear"> Reset </v-btn>
     </div>
     <v-btn
-      v-show="localEditMode === true"
+      v-show="formEditMode === true"
       class="info mt-4"
       @click.prevent="cancelEditDrink"
     >
@@ -77,7 +77,7 @@ export default {
   name: "SparklingWaterForm",
   data() {
     return {
-      localEditMode: this.$store.state.editMode, // for conditional rendering
+      formEditMode: this.$store.state.editMode, // for conditional rendering
       valid: true,
       flavor: "",
       flavorRules: [
@@ -153,6 +153,10 @@ export default {
           this.clear();
         }
       }
+    },
+    cancelEditDrink() {
+      this.$store.commit("cancelEdit");
+      this.clear();
     },
     clear() {
       this.$refs.sparklingWaterForm.reset();

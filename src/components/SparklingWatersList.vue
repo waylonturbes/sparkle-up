@@ -43,7 +43,7 @@
             class="d-flex flex-row ml-1"
             style="align-self: center"
           >
-            <v-tooltip v-if="localEditMode === false" bottom color="primary">
+            <v-tooltip v-if="listEditMode === false" bottom color="primary">
               <template v-slot:activator="{ on, attrs }">
                 <v-btn icon class="mr-1">
                   <v-icon
@@ -109,9 +109,16 @@ export default {
   name: "SparklingWatersList",
   data() {
     return {
-      localEditMode: this.$store.state.editMode,
+      listEditMode: this.$store.state.editMode,
       sparklingWaterList: this.$store.state.sparklingWaters,
     };
+  },
+  methods: {
+    deleteDrink(index) {
+      const newList = this.sparklingWaterList;
+      newList.splice(index, 1);
+      this.$store.commit("removeSparklingWater", newList);
+    },
   },
 };
 </script>
