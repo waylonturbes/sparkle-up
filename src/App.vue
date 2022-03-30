@@ -2,7 +2,7 @@
   <v-app>
     <sparkle-up-nav-bar />
     <v-main class="flex-auto">
-      <v-container class="flex-auto">
+      <v-container fluid class="flex-auto">
         <router-view />
       </v-container>
     </v-main>
