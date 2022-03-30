@@ -2,6 +2,34 @@
 
 Sparkle Up is a small app built with Vue and Vuetify.
 
+## Project setup
+
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+
+```
+npm run build
+```
+
+### Lints and fixes files
+
+```
+npm run lint
+```
+
+### Customize configuration
+
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
 ## Usage
 
 First you will have to clone down the repository. Once you have completed that, enter the cloned down project directory and run it in your browser.
