@@ -1,75 +1,81 @@
 <template>
-  <v-form ref="sparklingWaterForm" v-model="valid" lazy-validation>
-    <h3 class="text-h5 font-weight-medium text-center pb-4">
-      &#129380; Add a sparkling water &#10024;
-    </h3>
-    <v-text-field
-      filled
-      v-model="sparklingWater.flavor"
-      :rules="flavorRules"
-      label="Flavor"
-      required
-    ></v-text-field>
+  <v-card
+    :elevation="0"
+    color="rgba(0, 0, 0, 0)"
+    class="d-flex justify-center align-center"
+  >
+    <v-form ref="sparklingWaterForm" v-model="valid" lazy-validation>
+      <h3 class="text-h5 font-weight-medium text-center pb-4">
+        &#129380; Add a sparkling water &#10024;
+      </h3>
+      <v-text-field
+        filled
+        v-model="sparklingWater.flavor"
+        :rules="flavorRules"
+        label="Flavor"
+        required
+      ></v-text-field>
 
-    <v-select
-      filled
-      v-model="sparklingWater.brand"
-      :items="brands"
-      :rules="brandRules"
-      label="Brand"
-      required
-    ></v-select>
+      <v-select
+        filled
+        v-model="sparklingWater.brand"
+        :items="brands"
+        :rules="brandRules"
+        label="Brand"
+        required
+      ></v-select>
 
-    <v-text-field
-      v-if="sparklingWater.brand === 'Other'"
-      filled
-      v-model="sparklingWater.otherBrand"
-      :rules="brandRules"
-      label="Other Brand"
-      required
-    ></v-text-field>
+      <v-text-field
+        v-if="sparklingWater.brand === 'Other'"
+        filled
+        v-model="sparklingWater.otherBrand"
+        :rules="brandRules"
+        label="Other Brand"
+        required
+      ></v-text-field>
 
-    <v-select
-      filled
-      v-model.number="sparklingWater.rating"
-      :items="scores"
-      :rules="scoreRules"
-      label="Score"
-      required
-    ></v-select>
+      <v-select
+        filled
+        v-model.number="sparklingWater.rating"
+        :items="scores"
+        :rules="scoreRules"
+        label="Score"
+        required
+      ></v-select>
 
-    <v-textarea
-      filled
-      auto-grow
-      rows="3"
-      row-height="30"
-      v-model="sparklingWater.review"
-      :rules="reviewRules"
-      label="Review"
-      required
-    ></v-textarea>
+      <v-textarea
+        filled
+        auto-grow
+        rows="3"
+        row-height="30"
+        v-model="sparklingWater.review"
+        :rules="reviewRules"
+        label="Review"
+        required
+      ></v-textarea>
 
-    <div class="d-flex">
+      <div class="d-flex">
+        <v-btn
+          class="success"
+          type="submit"
+          :disabled="!valid"
+          @click.prevent="submit"
+        >
+          <span v-if="formEditMode === true"> Update Sparkling Water </span>
+          <span v-else> Add Sparkling Water </span>
+        </v-btn>
+
+        <v-btn color="info" @click.prevent="clear"> Reset </v-btn>
+      </div>
       <v-btn
-        class="success"
-        type="submit"
-        :disabled="!valid"
-        @click.prevent="submit"
+        v-show="formEditMode === true"
+        class="info mt-4"
+        @click.prevent="cancelEditDrink(editItem)"
       >
-        <span v-if="formEditMode === true"> Update Sparkling Water </span>
-        <span v-else> Add Sparkling Water </span>
+        Cancel Edit
       </v-btn>
-
-      <v-btn color="info" @click.prevent="clear"> Reset </v-btn>
-    </div>
-    <v-btn
-      v-show="formEditMode === true"
-      class="info mt-4"
-      @click.prevent="cancelEditDrink(editItem)"
-    >
-      Cancel Edit
-    </v-btn>
-  </v-form>
+    </v-form>
+  </v-card>
 </template>
 
 <script>

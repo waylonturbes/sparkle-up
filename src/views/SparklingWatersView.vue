@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-auto">
+  <div class="d-md-flex justify-space-around align-space-around">
     <sparkling-water-form />
     <sparkling-waters-list />
   </div>
