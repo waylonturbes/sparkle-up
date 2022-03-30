@@ -1,7 +1,7 @@
 <template>
-  <v-card elevation="3" class="overflow-y-auto sparkling-water-card">
-    <v-banner :sticky="true" color="primary" style="color: #fff">
-      <v-card-title style="padding: 0px">Sparkling Waters</v-card-title>
+  <v-card elevation="3" class="overflow-y-auto">
+    <v-banner :sticky="true" color="primary">
+      <v-card-title>Sparkling Waters</v-card-title>
     </v-banner>
     <v-list three-line>
       <v-list-item
@@ -39,10 +39,7 @@
             <v-list-item-subtitle>{{ water.review }}</v-list-item-subtitle>
           </v-list-item-content>
 
-          <v-list-item-action
-            class="d-flex flex-row ml-1"
-            style="align-self: center"
-          >
+          <v-list-item-action class="d-flex flex-row ml-1">
             <v-tooltip v-if="listEditMode === false" bottom color="primary">
               <template v-slot:activator="{ on, attrs }">
                 <v-btn icon class="mr-1">
@@ -67,7 +64,7 @@
                   :ripple="false"
                   plain
                   icon
-                  class="mr-1 no-hover"
+                  class="mr-1"
                 >
                   <v-icon> mdi-pencil-off </v-icon>
                 </v-btn>

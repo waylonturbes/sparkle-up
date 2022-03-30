@@ -1,5 +1,5 @@
 <template>
-  <v-footer app :fixed="false" class="d-flex footer">
+  <v-footer app :fixed="false" class="d-flex">
     <v-card flat tile class="primary white--text text-center" width="100%">
       <v-card-text>
         <v-btn

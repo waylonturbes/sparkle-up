@@ -1,5 +1,5 @@
 <template>
-  <v-form ref="sparklingWaterForm" v-model="valid" class="form" lazy-validation>
+  <v-form ref="sparklingWaterForm" v-model="valid" lazy-validation>
     <h3 class="text-h5 font-weight-medium text-center pb-4">
       &#129380; Add a sparkling water &#10024;
     </h3>
@@ -49,7 +49,7 @@
       required
     ></v-textarea>
 
-    <div class="button-group d-flex">
+    <div class="d-flex">
       <v-btn
         class="success"
         type="submit"
