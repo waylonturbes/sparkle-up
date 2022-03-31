@@ -55,16 +55,25 @@
             </v-list-item-icon>
             <v-list-item-title> Sparkling Waters </v-list-item-title>
           </v-list-item>
-
-          <v-divider></v-divider>
-
-          <v-list-item :inactive="true" :link="false">
-            <v-list-item-icon>
-              <v-icon>mdi-theme-light-dark</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title> Toggle Theme </v-list-item-title>
-          </v-list-item>
         </v-list-item-group>
+
+        <v-divider></v-divider>
+
+        <v-list-item
+          input-value=""
+          :link="false"
+          @click="
+            () => {
+              this.darkMode = !this.darkMode;
+              toggleDarkMode();
+            }
+          "
+        >
+          <v-list-item-icon>
+            <v-icon>mdi-theme-light-dark</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title> Toggle Theme </v-list-item-title>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
   </fragment>
