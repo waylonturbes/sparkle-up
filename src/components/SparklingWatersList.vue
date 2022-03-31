@@ -3,10 +3,12 @@
     <v-card
       elevation="3"
       class="overflow-y-auto align-self-center justify-self-center"
-      height="644px"
+      height="600px"
     >
       <v-banner :sticky="true" color="primary">
-        <v-card-title>Sparkling Waters</v-card-title>
+        <span class="white--text text-h5 font-weight-medium"
+          >Sparkling Waters</span
+        >
       </v-banner>
       <v-list three-line>
         <v-list-item
@@ -45,7 +47,7 @@
               <v-list-item-subtitle>{{ water.review }}</v-list-item-subtitle>
             </v-list-item-content>
 
-            <v-list-item-action class="d-flex flex-row ml-1">
+            <v-list-item-action class="d-flex flex-row ma-auto">
               <v-tooltip v-if="listEditMode === false" bottom color="primary">
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn icon class="mr-1">

@@ -11,7 +11,7 @@
       v-model="valid"
       lazy-validation
     >
-      <h3 class="text-h6 font-weight-medium text-center pb-4">
+      <h3 class="text-h5 font-weight-medium text-center pb-4">
         &#129380; Add a sparkling water &#10024;
       </h3>
       <v-text-field
