@@ -12,8 +12,9 @@
       <v-spacer></v-spacer>
 
       <v-switch
+        v-if="$vuetify.breakpoint.smAndUp"
         dense
-        label="Theme"
+        label="Toggle Theme"
         color="accent"
         :hide-details="true"
       ></v-switch>
@@ -51,6 +52,13 @@
               <v-icon>mdi-shimmer</v-icon>
             </v-list-item-icon>
             <v-list-item-title> Sparkling Waters </v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-theme-light-dark</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title> Toggle Theme </v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
