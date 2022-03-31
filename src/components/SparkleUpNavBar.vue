@@ -50,7 +50,11 @@ export default {
   }),
   methods: {
     goTo(string) {
-      this.$router.push(string);
+      if (this.$router.history.current.fullPath === string) {
+        return;
+      } else {
+        this.$router.push(string);
+      }
     },
   },
 };
