@@ -60,9 +60,9 @@
         required
       ></v-textarea>
 
-      <div class="d-flex">
+      <div class="d-flex flex-wrap justify-space-between">
         <v-btn
-          class="success"
+          color="success"
           type="submit"
           :disabled="!valid"
           @click.prevent="submit"
@@ -72,14 +72,16 @@
         </v-btn>
 
         <v-btn color="info" @click.prevent="clear"> Reset </v-btn>
+        <v-btn
+          v-show="formEditMode === true"
+          width="100%"
+          class="mt-4"
+          color="info"
+          @click.prevent="cancelEditDrink(editItem)"
+        >
+          Cancel Edit
+        </v-btn>
       </div>
-      <v-btn
-        v-show="formEditMode === true"
-        class="info mt-4"
-        @click.prevent="cancelEditDrink(editItem)"
-      >
-        Cancel Edit
-      </v-btn>
     </v-form>
   </v-card>
 </template>
