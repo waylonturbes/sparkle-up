@@ -12,25 +12,25 @@
           v-model="group"
           active-class="primary--text text--accent-4"
         >
-          <v-list-item>
+          <v-list-item @click="goTo('/')">
             <v-list-item-icon>
               <v-icon>mdi-home</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Home</v-list-item-title>
+            <v-list-item-title> Home </v-list-item-title>
           </v-list-item>
 
-          <v-list-item>
+          <v-list-item @click="goTo('/about')">
             <v-list-item-icon>
               <v-icon>mdi-information</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>About</v-list-item-title>
+            <v-list-item-title> About </v-list-item-title>
           </v-list-item>
 
-          <v-list-item>
+          <v-list-item @click="goTo('/sparkling-waters')">
             <v-list-item-icon>
               <v-icon>mdi-shimmer</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Sparkling Waters</v-list-item-title>
+            <v-list-item-title> Sparkling Waters </v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -48,5 +48,10 @@ export default {
     drawer: false,
     group: null,
   }),
+  methods: {
+    goTo(string) {
+      this.$router.push(string);
+    },
+  },
 };
 </script>
