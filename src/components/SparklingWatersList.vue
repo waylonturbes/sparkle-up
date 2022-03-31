@@ -1,10 +1,9 @@
 <template>
-  <div class="mt-10 mt-md-0 d-flex align-center justify-center">
+  <div class="pa-5 mt-md-0 d-flex align-center justify-center">
     <v-card
       elevation="3"
       class="overflow-y-auto align-self-center justify-self-center"
-      max-height="644px"
-      max-width="600px"
+      height="644px"
     >
       <v-banner :sticky="true" color="primary">
         <v-card-title>Sparkling Waters</v-card-title>

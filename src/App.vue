@@ -1,8 +1,8 @@
 <template>
   <v-app>
     <sparkle-up-nav-bar />
-    <v-main class="align-center">
-      <v-container fluid class="flex-auto py-10">
+    <v-main class="d-flex align-center">
+      <v-container fluid>
         <router-view />
       </v-container>
     </v-main>

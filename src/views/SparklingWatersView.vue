@@ -1,8 +1,13 @@
 <template>
-  <div class="d-md-flex justify-space-around align-space-around">
+  <v-card
+    :elevation="0"
+    color="rgba(0, 0, 0, 0)"
+    class="d-flex flex-wrap justify-space-around mx-auto"
+    max-width="1600px"
+  >
     <sparkling-water-form />
     <sparkling-waters-list />
-  </div>
+  </v-card>
 </template>
 
 <script>

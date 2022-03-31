@@ -2,10 +2,16 @@
   <v-card
     :elevation="0"
     color="rgba(0, 0, 0, 0)"
-    class="d-flex justify-center align-center"
+    width="400px"
+    class="d-flex align-center pa-5"
   >
-    <v-form ref="sparklingWaterForm" v-model="valid" lazy-validation>
-      <h3 class="text-h5 font-weight-medium text-center pb-4">
+    <v-form
+      ref="sparklingWaterForm"
+      style="flex: auto"
+      v-model="valid"
+      lazy-validation
+    >
+      <h3 class="text-h6 font-weight-medium text-center pb-4">
         &#129380; Add a sparkling water &#10024;
       </h3>
       <v-text-field
