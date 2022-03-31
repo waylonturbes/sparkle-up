@@ -21,9 +21,9 @@
 
       <template v-if="$vuetify.breakpoint.smAndUp" v-slot:extension>
         <v-tabs centered fixed-tabs>
-          <v-tab>Home</v-tab>
-          <v-tab>About</v-tab>
-          <v-tab>Sparkling Waters</v-tab>
+          <v-tab to="/">Home</v-tab>
+          <v-tab to="/about">About</v-tab>
+          <v-tab to="/sparkling-waters">Sparkling Waters</v-tab>
         </v-tabs>
       </template>
     </v-app-bar>
@@ -33,28 +33,30 @@
           v-model="group"
           active-class="primary--text text--accent-4"
         >
-          <v-list-item @click="goTo('/')">
+          <v-list-item to="/">
             <v-list-item-icon>
               <v-icon>mdi-home</v-icon>
             </v-list-item-icon>
             <v-list-item-title> Home </v-list-item-title>
           </v-list-item>
 
-          <v-list-item @click="goTo('/about')">
+          <v-list-item to="/about">
             <v-list-item-icon>
               <v-icon>mdi-information</v-icon>
             </v-list-item-icon>
             <v-list-item-title> About </v-list-item-title>
           </v-list-item>
 
-          <v-list-item @click="goTo('/sparkling-waters')">
+          <v-list-item to="/sparkling-waters">
             <v-list-item-icon>
               <v-icon>mdi-shimmer</v-icon>
             </v-list-item-icon>
             <v-list-item-title> Sparkling Waters </v-list-item-title>
           </v-list-item>
 
-          <v-list-item>
+          <v-divider></v-divider>
+
+          <v-list-item :inactive="true" :link="false">
             <v-list-item-icon>
               <v-icon>mdi-theme-light-dark</v-icon>
             </v-list-item-icon>
@@ -76,14 +78,5 @@ export default {
     drawer: false,
     group: null,
   }),
-  methods: {
-    goTo(string) {
-      if (this.$router.history.current.fullPath === string) {
-        return;
-      } else {
-        this.$router.push(string);
-      }
-    },
-  },
 };
 </script>
