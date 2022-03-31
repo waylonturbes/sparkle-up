@@ -18,5 +18,12 @@ export default {
   components: { SparkleUpFooter, SparkleUpNavBar },
   name: "App",
   data: () => ({}),
+  beforeCreate() {
+    if (window.localStorage.getItem("theme")) {
+      return;
+    } else {
+      window.localStorage.setItem("theme", "light");
+    }
+  },
 };
 </script>

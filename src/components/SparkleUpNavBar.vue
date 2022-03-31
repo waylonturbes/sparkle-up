@@ -1,11 +1,11 @@
 <template>
   <fragment>
-    <v-app-bar app :elevation="0" dark color="primary">
+    <v-app-bar app :elevation="0">
       <v-app-bar-nav-icon
         v-if="$vuetify.breakpoint.xs"
         @click="drawer = true"
       ></v-app-bar-nav-icon>
-      <v-toolbar-title class="text-h4 font-weight-bold pl-sm-0"
+      <v-toolbar-title class="text-h4 font-weight-medium pl-sm-0"
         >Sparkle Up</v-toolbar-title
       >
 
@@ -14,8 +14,10 @@
       <v-switch
         v-if="$vuetify.breakpoint.smAndUp"
         dense
+        v-model="darkMode"
+        @click="toggleDarkMode()"
         label="Toggle Theme"
-        color="accent"
+        color="primary"
         :hide-details="true"
       ></v-switch>
 
@@ -77,6 +79,17 @@ export default {
   data: () => ({
     drawer: false,
     group: null,
+    darkMode: window.localStorage.getItem("theme") === "dark" ? true : false,
   }),
+  methods: {
+    toggleDarkMode() {
+      this.$vuetify.theme.dark = this.darkMode;
+      if (this.darkMode === true) {
+        window.localStorage.setItem("theme", "dark");
+      } else {
+        window.localStorage.setItem("theme", "light");
+      }
+    },
+  },
 };
 </script>
