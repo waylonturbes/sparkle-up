@@ -1,10 +1,30 @@
 <template>
   <fragment>
     <v-app-bar app :elevation="0" dark color="primary">
-      <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-      <v-toolbar-title class="text-h4 font-weight-bold"
+      <v-app-bar-nav-icon
+        v-if="$vuetify.breakpoint.xs"
+        @click="drawer = true"
+      ></v-app-bar-nav-icon>
+      <v-toolbar-title class="text-h4 font-weight-bold pl-sm-0"
         >Sparkle Up</v-toolbar-title
       >
+
+      <v-spacer></v-spacer>
+
+      <v-switch
+        dense
+        label="Theme"
+        color="accent"
+        :hide-details="true"
+      ></v-switch>
+
+      <template v-if="$vuetify.breakpoint.smAndUp" v-slot:extension>
+        <v-tabs centered fixed-tabs>
+          <v-tab>Home</v-tab>
+          <v-tab>About</v-tab>
+          <v-tab>Sparkling Waters</v-tab>
+        </v-tabs>
+      </template>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" absolute temporary>
       <v-list nav dense>
