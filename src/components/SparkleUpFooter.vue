@@ -1,17 +1,11 @@
 <template>
-  <v-footer :absolute="false" class="pa-0" style="">
-    <v-card
-      :flat="true"
-      :tile="true"
-      color="primary"
-      class="white--text text-center"
-      width="100%"
-    >
+  <v-footer :absolute="false" outlined class="pa-0">
+    <v-card :flat="true" :tile="true" class="text-center" width="100%">
       <v-card-text>
         <v-btn
           v-for="icon in icons"
           :key="icon.svg"
-          class="mx-4 white--text"
+          class="mx-4"
           :href="icon.link"
           target="_blank"
           icon
@@ -20,16 +14,16 @@
         </v-btn>
       </v-card-text>
 
-      <v-card-text class="white--text pt-0 text-body1 font-weight-medium">
+      <v-card-text class="pt-0 text-body1">
         I hope you enjoyed using Sparkle Up as much as I enjoyed building it!
-        This app was built with Vue & Vuetify for experimenting purposes. If you
-        want to, you can find me on the following platforms.
+        This app was built with Vue & Vuetify for experimenting purposes.
+        <br />If you want to, you can find me on the following platforms.
       </v-card-text>
 
       <v-divider></v-divider>
 
-      <v-card-text class="white--text text-h6">
-        {{ new Date().getFullYear() }} — <strong>Sparkle Up</strong>
+      <v-card-text class="text-h6">
+        {{ new Date().getFullYear() }} — Sparkle Up
       </v-card-text>
     </v-card>
   </v-footer>

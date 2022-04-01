@@ -1,15 +1,14 @@
 <template>
-  <hello-world />
+  <spinning-can-animation />
 </template>
 
 <script>
-import HelloWorld from "../components/HelloWorld";
+import SpinningCanAnimation from "../components/SpinningCanAnimation.vue";
 
 export default {
   name: "HomeView",
-
   components: {
-    HelloWorld,
+    SpinningCanAnimation,
   },
 };
 </script>

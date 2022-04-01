@@ -1,6 +1,6 @@
 <template>
   <fragment>
-    <v-app-bar app :elevation="0">
+    <v-app-bar app outlined :elevation="0">
       <v-app-bar-nav-icon
         v-if="$vuetify.breakpoint.xs"
         @click="drawer = true"
