@@ -1,5 +1,5 @@
 <template>
-  <div ref="spinningCan" style="width: 300px; height: 300px"></div>
+  <div ref="spinningCan"></div>
 </template>
 
 <script>

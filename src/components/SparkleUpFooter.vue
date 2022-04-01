@@ -14,7 +14,7 @@
         </v-btn>
       </v-card-text>
 
-      <v-card-text class="pt-0 text-body1 font-weight-medium">
+      <v-card-text class="pt-0 text-body1">
         I hope you enjoyed using Sparkle Up as much as I enjoyed building it!
         This app was built with Vue & Vuetify for experimenting purposes.
         <br />If you want to, you can find me on the following platforms.
@@ -23,7 +23,7 @@
       <v-divider></v-divider>
 
       <v-card-text class="text-h6">
-        {{ new Date().getFullYear() }} — <strong>Sparkle Up</strong>
+        {{ new Date().getFullYear() }} — Sparkle Up
       </v-card-text>
     </v-card>
   </v-footer>
