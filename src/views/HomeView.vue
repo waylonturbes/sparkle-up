@@ -1,26 +1,14 @@
 <template>
-  <div ref="spinningCan" style="width: 300px; height: 300px"></div>
+  <spinning-can-animation />
 </template>
 
 <script>
-import lottieWeb from "lottie-web";
+import SpinningCanAnimation from "../components/SpinningCanAnimation.vue";
 
 export default {
   name: "HomeView",
-  methods: {
-    spinningCanAnimation() {
-      lottieWeb.loadAnimation({
-        container: this.$refs.spinningCan,
-        path: "/can.json",
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        name: "Spinning Can",
-      });
-    },
-  },
-  mounted: function () {
-    this.spinningCanAnimation();
+  components: {
+    SpinningCanAnimation,
   },
 };
 </script>
