@@ -1,14 +1,13 @@
 <template>
   <div class="pa-5 mt-md-0 d-flex align-center justify-center">
     <v-card
+      outlined
       elevation="3"
       class="overflow-y-auto align-self-center justify-self-center"
       height="600px"
     >
-      <v-banner :sticky="true" color="primary">
-        <span class="white--text text-h5 font-weight-medium"
-          >Sparkling Waters</span
-        >
+      <v-banner :sticky="true" color="primary" class="white--text">
+        <span class="text-h5 font-weight-medium">Sparkling Waters</span>
       </v-banner>
       <v-list three-line>
         <v-list-item
