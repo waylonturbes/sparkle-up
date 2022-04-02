@@ -5,7 +5,6 @@ Vue.use(Vuetify);
 
 export default new Vuetify({
   theme: {
-    dark: window.localStorage.getItem("theme") === "dark" ? true : false,
     themes: {
       light: {
         primary: "#1976D2",
@@ -15,6 +14,7 @@ export default new Vuetify({
         info: "#2196F3",
         success: "#4CAF50",
         warning: "#FB8C00",
+        background: "#FFFFFF",
       },
       dark: {
         primary: "#2196F3",
@@ -24,6 +24,7 @@ export default new Vuetify({
         info: "#2196F3",
         success: "#4CAF50",
         warning: "#FB8C00",
+        background: "#1c1c1c",
       },
     },
   },

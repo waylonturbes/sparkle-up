@@ -1,6 +1,15 @@
 <template>
   <v-footer :absolute="false" outlined class="pa-0">
-    <v-card :flat="true" :tile="true" class="text-center" width="100%">
+    <v-card
+      :flat="true"
+      :tile="true"
+      class="text-center"
+      width="100%"
+      :style="{
+        'background-color':
+          this.$vuetify.theme.dark === false ? '#f5f5f5' : '#272727',
+      }"
+    >
       <v-card-text>
         <v-btn
           v-for="icon in icons"

@@ -14,7 +14,8 @@
       <v-switch
         v-if="$vuetify.breakpoint.smAndUp"
         dense
-        v-model="$vuetify.theme.dark"
+        v-model="darkMode"
+        @click="toggleDarkMode()"
         label="Toggle Theme"
         color="primary"
         :hide-details="true"
@@ -58,7 +59,16 @@
 
         <v-divider></v-divider>
 
-        <v-list-item @click="toggleDarkMode()" :link="false">
+        <v-list-item
+          input-value=""
+          :link="false"
+          @click="
+            () => {
+              this.darkMode = !this.darkMode;
+              toggleDarkMode();
+            }
+          "
+        >
           <v-list-item-icon>
             <v-icon>mdi-theme-light-dark</v-icon>
           </v-list-item-icon>
@@ -78,10 +88,15 @@ export default {
   data: () => ({
     drawer: false,
     group: null,
+    darkMode: window.localStorage.getItem("theme") === "dark" ? true : false,
   }),
   methods: {
     toggleDarkMode() {
-      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+      this.$vuetify.theme.dark = this.darkMode;
+      window.localStorage.setItem(
+        "theme",
+        this.darkMode === true ? "dark" : "light"
+      );
     },
   },
 };
