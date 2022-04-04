@@ -5,20 +5,19 @@
     class="d-flex flex-column justify-space-around my-10"
   >
     <v-row justify="center">
-      <v-col cols="6">
+      <v-col cols="12" sm="6">
         <h1 class="text-h2 text-center">
-          Find, create, <br />
-          rate & review <br />
-          sparkling waters.
+          Find, create, rate & review sparkling waters.
         </h1>
       </v-col>
     </v-row>
     <v-row justify="center" class="mb-10 mb-md-0">
-      <v-col md="6" cols="8" class="justify-center">
+      <v-col md="4" cols="8" class="justify-center">
         <spinning-can-animation />
       </v-col>
-      <v-col md="6" align-self="center" cols="8">
-        <p>
+      <v-col md="4" align-self="center" cols="8">
+        <h3 class="text-h4 mb-4">Start your spark</h3>
+        <p class="mb-8">
           Want to record sparkling waters, but don't want to write them all down
           by hand, on a sheet of paper? Well, Sparkle Up has what you need. With
           Sparkle Up, you can record and rate/review your favorite (or least
