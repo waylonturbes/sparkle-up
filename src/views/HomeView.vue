@@ -1,5 +1,16 @@
 <template>
   <v-container :elevation="0" color="rgba(0, 0, 0, 0)">
+    <v-row>
+      <v-card outlined>
+        <v-carousel hide-delimiters>
+          <v-carousel-item
+            v-for="(image, i) in sparklingWaterImages"
+            :key="i"
+            :src="image.src"
+          ></v-carousel-item>
+        </v-carousel>
+      </v-card>
+    </v-row>
     <v-row no-gutters justify="center">
       <spinning-can-animation style="height: 320px; width: 320px" />
     </v-row>
@@ -26,11 +37,29 @@
 
 <script>
 import SpinningCanAnimation from "../components/SpinningCanAnimation.vue";
+import laCroixWater from "../assets/la-croix-sparkling-water.jpg";
+import bublyWater from "../assets/bubly-sparkling-water.jpg";
+import dogWithWater from "../assets/dog-with-sparkling-water.jpg";
+import mineraguaWater from "../assets/mineragua-sparkling-water.jpg";
+import sanzoWater from "../assets/sanzo-sparkling-water.jpg";
+import plantWater from "../assets/plant-sparkling-water.jpg";
 
 export default {
   name: "HomeView",
   components: {
     SpinningCanAnimation,
+  },
+  data: function () {
+    return {
+      sparklingWaterImages: [
+        { src: laCroixWater },
+        { src: sanzoWater },
+        { src: dogWithWater },
+        { src: mineraguaWater },
+        { src: bublyWater },
+        { src: plantWater },
+      ],
+    };
   },
 };
 </script>
