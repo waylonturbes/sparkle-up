@@ -5,9 +5,11 @@
         v-if="$vuetify.breakpoint.xs"
         @click="drawer = true"
       ></v-app-bar-nav-icon>
-      <v-toolbar-title class="text-h4 font-weight-medium pl-sm-0"
-        >Sparkle Up</v-toolbar-title
-      >
+      <v-app-bar-title
+        v-text="'Sparkle Up'"
+        class="font-weight-medium text-uppercase pl-sm-0"
+        style="letter-spacing: 0.2rem; font-size: 2.125rem"
+      ></v-app-bar-title>
 
       <v-spacer></v-spacer>
 
@@ -93,11 +95,10 @@ export default {
   methods: {
     toggleDarkMode() {
       this.$vuetify.theme.dark = this.darkMode;
-      if (this.darkMode === true) {
-        window.localStorage.setItem("theme", "dark");
-      } else {
-        window.localStorage.setItem("theme", "light");
-      }
+      window.localStorage.setItem(
+        "theme",
+        this.darkMode === true ? "dark" : "light"
+      );
     },
   },
 };

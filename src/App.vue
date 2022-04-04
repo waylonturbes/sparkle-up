@@ -1,7 +1,10 @@
 <template>
   <v-app>
     <sparkle-up-nav-bar />
-    <v-main class="d-flex align-center">
+    <v-main
+      class="d-flex align-center"
+      :style="{ background: $vuetify.theme.themes[theme].background }"
+    >
       <v-container fluid>
         <router-view />
       </v-container>
@@ -17,12 +20,20 @@ import SparkleUpNavBar from "./components/SparkleUpNavBar.vue";
 export default {
   components: { SparkleUpFooter, SparkleUpNavBar },
   name: "App",
-  data: () => ({}),
-  beforeCreate() {
-    if (window.localStorage.getItem("theme")) {
+  data: () => ({
+    currentTheme: window.localStorage.getItem("theme"),
+  }),
+  computed: {
+    theme() {
+      return this.$vuetify.theme.dark ? "dark" : "light";
+    },
+  },
+  beforeMount() {
+    if (this.currentTheme) {
+      this.$vuetify.theme.dark = this.currentTheme === "dark" ? true : false;
       return;
     } else {
-      window.localStorage.setItem("theme", "light");
+      window.localStorage.setItem("theme", this.$vuetify);
     }
   },
 };
