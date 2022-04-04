@@ -1,8 +1,21 @@
 <template>
-  <v-container :elevation="0" color="rgba(0, 0, 0, 0)">
-    <v-row>
-      <v-card outlined>
-        <v-carousel hide-delimiters>
+  <v-container
+    :elevation="0"
+    color="rgba(0, 0, 0, 0)"
+    class="d-flex flex-column justify-space-around my-10"
+  >
+    <v-row justify="center" class="mb-10">
+      <v-col cols="6">
+        <h1 class="text-h2 text-center">
+          Find, create, <br />
+          rate & review <br />
+          sparkling waters.
+        </h1>
+      </v-col>
+    </v-row>
+    <v-row justify="center">
+      <v-card outlined class="pa-6" elevation="4">
+        <v-carousel hide-delimiters :cycle="true" progress>
           <v-carousel-item
             v-for="(image, i) in sparklingWaterImages"
             :key="i"
@@ -11,7 +24,7 @@
         </v-carousel>
       </v-card>
     </v-row>
-    <v-row no-gutters justify="center">
+    <v-row justify="center">
       <spinning-can-animation style="height: 320px; width: 320px" />
     </v-row>
     <v-row justify="center">
