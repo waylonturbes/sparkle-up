@@ -13,7 +13,9 @@
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-spacer v-if="$vuetify.breakpoint.lg === true"></v-spacer>
+      <v-spacer
+        v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.xl"
+      ></v-spacer>
       <v-col cols="12" lg="5" xl="4" align-self="center">
         <CarouselCard
           :images="sparklingWaterImages"
@@ -22,8 +24,9 @@
           "
         />
       </v-col>
-      <v-spacer v-if="$vuetify.breakpoint.lg === true"></v-spacer>
-      <v-spacer v-if="$vuetify.breakpoint.lg === true"></v-spacer>
+      <v-spacer
+        v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.xl"
+      ></v-spacer>
       <v-col cols="10" lg="5" xl="4" align-self="center">
         <h3 class="text-h4 mb-4 text-md-start text-center">
           What are sparkling waters?
@@ -47,7 +50,9 @@
           reprehenderit.
         </p>
       </v-col>
-      <v-spacer v-if="$vuetify.breakpoint.lg === true"></v-spacer>
+      <v-spacer
+        v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.xl"
+      ></v-spacer>
     </v-row>
   </v-container>
 </template>
