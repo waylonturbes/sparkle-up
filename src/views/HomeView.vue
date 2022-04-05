@@ -3,14 +3,14 @@
     color="rgba(0, 0, 0, 0)"
     class="d-flex flex-column justify-space-around"
   >
-    <v-row justify="center">
+    <v-row justify="center" class="mb-md-10 mb-0">
       <v-col cols="10" sm="6">
         <h1 class="text-h2 text-center">
           Find, create, rate & review sparkling waters
         </h1>
       </v-col>
     </v-row>
-    <v-row justify="center" class="mb-10 mb-md-0">
+    <v-row justify="center" class="my-10 my-md-0">
       <v-col md="4" sm="5" cols="8" class="justify-center">
         <spinning-can-animation />
       </v-col>
@@ -21,7 +21,7 @@
         class="text-center text-md-justify"
       >
         <h3 class="text-h4 mb-4">Start your spark</h3>
-        <p class="mb-8 text-body1">
+        <p class="mb-8 text-body1 text-justify">
           Want to record sparkling waters, but don't want to write them all down
           by hand, on a sheet of paper? Well, Sparkle Up has what you need. With
           Sparkle Up, you can record and rate/review your favorite (or least
@@ -35,10 +35,43 @@
         ></v-btn>
       </v-col>
     </v-row>
-    <v-row justify="center">
-      <v-col cols="12" md="10" lg="8" xl="6">
-        <CarouselCard :images="sparklingWaterImages" height="700px" />
+    <v-divider class="my-10"></v-divider>
+    <v-row justify="center" class="mt-10">
+      <v-spacer></v-spacer>
+      <v-col cols="10" lg="5" xl="4" align-self="center">
+        <h3 class="text-h5 mb-4 text-md-start text-center">
+          Why is Sparking Water so good?
+        </h3>
+        <p class="text-body1 text-justify">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut iusto
+          praesentium officiis, ex nobis quaerat sit consequuntur perspiciatis,
+          doloremque quibusdam eum dignissimos vitae. Voluptatum totam deleniti
+          velit explicabo. Architecto iusto corporis atque, minus sequi porro
+          animi tempore vel voluptate, ratione mollitia nihil beatae iste odio
+          non ad provident? Molestiae saepe laudantium soluta totam explicabo.
+          Laborum adipisci exercitationem similique veritatis quaerat quam nemo
+          culpa pariatur. Architecto soluta aliquid ullam eveniet, quae sit,
+          inventore quis, quidem explicabo maiores natus dignissimos! Culpa
+          itaque dolore consectetur possimus cum? At laborum corporis ut iusto
+          deleniti! Dolorum velit esse aperiam itaque iure est quasi cum maiores
+          id. Amet voluptatibus et facilis consectetur adipisci quisquam! Ipsam,
+          at. Atque, impedit id culpa nesciunt fugiat dolore illo facere odit
+          repellat maiores laboriosam iste molestiae! Dolores culpa earum
+          officiis magni, in obcaecati repellendus doloribus nihil
+          reprehenderit.
+        </p>
       </v-col>
+      <v-spacer v-if="$vuetify.breakpoint.lg === true"></v-spacer>
+      <v-spacer></v-spacer>
+      <v-col cols="12" lg="5" xl="4" align-self="center">
+        <CarouselCard
+          :images="sparklingWaterImages"
+          :height="
+            $vuetify.breakpoint.sm || $vuetify.breakpoint.md ? '600px' : '400px'
+          "
+        />
+      </v-col>
+      <v-spacer></v-spacer>
     </v-row>
   </v-container>
 </template>

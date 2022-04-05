@@ -15,7 +15,7 @@
     <v-row justify="center">
       <v-spacer></v-spacer>
       <v-spacer></v-spacer>
-      <v-col cols="12" lg="5" xl="4">
+      <v-col cols="12" lg="5" xl="4" align-self="center">
         <CarouselCard
           :images="sparklingWaterImages"
           :height="
