@@ -37,7 +37,7 @@
     </v-row>
     <v-divider class="my-10"></v-divider>
     <v-row justify="center" class="mt-10">
-      <v-spacer></v-spacer>
+      <v-spacer v-if="$vuetify.breakpoint.lg === true"></v-spacer>
       <v-col cols="10" lg="5" xl="4" align-self="center">
         <h3 class="text-h5 mb-4 text-md-start text-center">
           Why is Sparking Water so good?
@@ -62,7 +62,7 @@
         </p>
       </v-col>
       <v-spacer v-if="$vuetify.breakpoint.lg === true"></v-spacer>
-      <v-spacer></v-spacer>
+      <v-spacer v-if="$vuetify.breakpoint.lg === true"></v-spacer>
       <v-col cols="12" lg="5" xl="4" align-self="center">
         <CarouselCard
           :images="sparklingWaterImages"
@@ -71,7 +71,7 @@
           "
         />
       </v-col>
-      <v-spacer></v-spacer>
+      <v-spacer v-if="$vuetify.breakpoint.lg === true"></v-spacer>
     </v-row>
   </v-container>
 </template>
