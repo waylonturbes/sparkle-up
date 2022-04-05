@@ -5,7 +5,7 @@
       class="d-flex align-center"
       :style="{ background: $vuetify.theme.themes[theme].background }"
     >
-      <v-container fluid>
+      <v-container fluid class="my-10">
         <router-view />
       </v-container>
     </v-main>
