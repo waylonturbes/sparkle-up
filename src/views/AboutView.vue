@@ -13,6 +13,8 @@
       </v-col>
     </v-row>
     <v-row justify="center">
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
       <v-col cols="12" lg="5" xl="4">
         <CarouselCard
           :images="sparklingWaterImages"
@@ -21,6 +23,7 @@
           "
         />
       </v-col>
+      <v-spacer></v-spacer>
       <v-col cols="12" lg="5" xl="4" align-self="center">
         <p class="text-body1 text-justify">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut iusto
@@ -41,6 +44,8 @@
           reprehenderit.
         </p>
       </v-col>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
     </v-row>
   </v-container>
 </template>
