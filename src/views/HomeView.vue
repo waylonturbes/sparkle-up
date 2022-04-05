@@ -33,7 +33,7 @@
     </v-row>
     <v-row justify="center">
       <v-col cols="6">
-        <CarouselCard :images="sparklingWaterImages" />
+        <CarouselCard :images="sparklingWaterImages" height="600px" />
       </v-col>
     </v-row>
   </v-container>

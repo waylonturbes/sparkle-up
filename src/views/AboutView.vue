@@ -7,7 +7,7 @@
     </v-row>
     <v-row justify="center">
       <v-col cols="6">
-        <CarouselCard />
+        <CarouselCard :images="sparklingWaterImages" height="600px" />
       </v-col>
     </v-row>
   </v-container>
@@ -16,13 +16,23 @@
 <script>
 import CarouselCard from "../components/CarouselCard.vue";
 
+import raspberryLemonWater from "../assets/raspberry-lemon-sparkling-water.jpg";
+import lemonWater from "../assets/lemon-sparkling-water.jpg";
+import shinyWater from "../assets/shiny-sparkling-water.jpg";
+
 export default {
   name: "AboutView",
   components: {
     CarouselCard,
   },
   data: function () {
-    return {};
+    return {
+      sparklingWaterImages: [
+        { src: raspberryLemonWater },
+        { src: lemonWater },
+        { src: shinyWater },
+      ],
+    };
   },
 };
 </script>

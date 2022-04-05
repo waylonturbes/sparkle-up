@@ -1,6 +1,13 @@
 <template>
   <v-card outlined class="pa-6" elevation="4">
-    <v-carousel height="700px" hide-delimiters :cycle="true" progress>
+    <v-carousel
+      :height="height"
+      :min-height="minHeight"
+      :max-height="maxHeight"
+      hide-delimiters
+      :cycle="true"
+      progress
+    >
       <v-carousel-item
         v-for="(image, i) in images"
         :key="i"
@@ -14,6 +21,9 @@
 export default {
   props: {
     images: Array,
+    minHeight: String,
+    maxHeight: String,
+    height: String,
   },
 };
 </script>
