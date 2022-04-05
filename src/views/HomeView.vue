@@ -32,20 +32,16 @@
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-card outlined class="pa-6" elevation="4">
-        <v-carousel hide-delimiters :cycle="true" progress>
-          <v-carousel-item
-            v-for="(image, i) in sparklingWaterImages"
-            :key="i"
-            :src="image.src"
-          ></v-carousel-item>
-        </v-carousel>
-      </v-card>
+      <v-col cols="6">
+        <CarouselCard :images="sparklingWaterImages" />
+      </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
+import CarouselCard from "../components/CarouselCard.vue";
+
 import SpinningCanAnimation from "../components/SpinningCanAnimation.vue";
 import laCroixWater from "../assets/la-croix-sparkling-water.jpg";
 import bublyWater from "../assets/bubly-sparkling-water.jpg";
@@ -58,6 +54,7 @@ export default {
   name: "HomeView",
   components: {
     SpinningCanAnimation,
+    CarouselCard,
   },
   data: function () {
     return {
