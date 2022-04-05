@@ -1,12 +1,12 @@
 <template>
   <v-container
     color="rgba(0, 0, 0, 0)"
-    class="d-flex flex-column justify-space-around my-10"
+    class="d-flex flex-column justify-space-around"
   >
     <v-row justify="center">
-      <v-col cols="10" sm="8">
+      <v-col cols="10" sm="6">
         <h1 class="text-h2 text-center">
-          Find, create, rate & review sparkling waters.
+          Find, create, rate & review sparkling waters
         </h1>
       </v-col>
     </v-row>

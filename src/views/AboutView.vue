@@ -1,7 +1,7 @@
 <template>
   <v-container
     color="rgba(0, 0, 0, 0)"
-    class="d-flex flex-column justify-space-around my-10"
+    class="d-flex flex-column justify-space-around"
   >
     <v-row justify="center" class="mb-10">
       <v-col cols="10" sm="8">
@@ -13,7 +13,7 @@
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col cols="12" lg="5">
+      <v-col cols="12" lg="5" xl="4">
         <CarouselCard
           :images="sparklingWaterImages"
           :height="
@@ -21,7 +21,7 @@
           "
         />
       </v-col>
-      <v-col cols="12" lg="5" align-self="center">
+      <v-col cols="12" lg="5" xl="4" align-self="center">
         <p class="text-body1 text-justify">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut iusto
           praesentium officiis, ex nobis quaerat sit consequuntur perspiciatis,
