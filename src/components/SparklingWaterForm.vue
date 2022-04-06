@@ -33,7 +33,7 @@
         v-if="sparklingWater.brand === 'Other'"
         filled
         v-model="sparklingWater.otherBrand"
-        :rules="brandRules"
+        :rules="otherBrandRules"
         label="Other Brand"
         required
       ></v-text-field>
@@ -120,6 +120,10 @@ export default {
         "Other",
       ],
       brandRules: [(v) => !!v || "Brand is required"],
+      otherBrandRules: [
+        (v) => !!v || "Brand is required",
+        (v) => (v && v.length < 30) || "Must be under 30 characters",
+      ],
       reviewRules: [
         (v) => !!v || "Review is required",
         (v) => (v && v.length < 100) || "Must be under 100 characters",
