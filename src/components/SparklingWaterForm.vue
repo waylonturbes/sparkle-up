@@ -1,6 +1,14 @@
 <template>
-  <v-row justify="center">
-    <v-col cols="10" sm="8" md="6" lg="4" xl="3">
+  <fragment>
+    <v-col
+      align-self="center"
+      cols="10"
+      sm="8"
+      md="6"
+      lg="4"
+      xl="3"
+      class="mb-10 mb-lg-0"
+    >
       <v-form ref="sparklingWaterForm" v-model="valid" lazy-validation>
         <h3 class="text-h5 font-weight-medium text-center pb-4">
           &#129380; Add a sparkling water &#10024;
@@ -75,11 +83,12 @@
         </div>
       </v-form>
     </v-col>
-  </v-row>
+  </fragment>
 </template>
 
 <script>
 import { mapState } from "vuex";
+import { Fragment } from "vue-fragment";
 
 export default {
   name: "SparklingWaterForm",
@@ -119,6 +128,9 @@ export default {
         (v) => (v && v.length < 100) || "Must be under 100 characters",
       ],
     };
+  },
+  components: {
+    Fragment,
   },
   computed: {
     ...mapState({
