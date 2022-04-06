@@ -12,7 +12,7 @@
         </h1>
       </v-col>
     </v-row>
-    <v-row justify="center">
+    <v-row justify="center" class="mb-10">
       <v-spacer
         v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.xl"
       ></v-spacer>
@@ -54,11 +54,17 @@
         v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.xl"
       ></v-spacer>
     </v-row>
+    <v-row justify="center">
+      <v-col cols="10">
+        <creator-card />
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
 import CarouselCard from "../components/CarouselCard.vue";
+import CreatorCard from "../components/CreatorCard.vue";
 
 import raspberryLemonWater from "../assets/raspberry-lemon-sparkling-water.jpg";
 import lemonWater from "../assets/lemon-sparkling-water.jpg";
@@ -68,6 +74,7 @@ export default {
   name: "AboutView",
   components: {
     CarouselCard,
+    CreatorCard,
   },
   data: function () {
     return {
