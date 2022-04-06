@@ -3,7 +3,11 @@
     color="rgba(0, 0, 0, 0)"
     class="d-flex flex-column justify-space-around"
   >
-    <v-row justify="center" class="mb-10 mb-lg-0">
+    <v-row
+      justify="center"
+      justify-md="space-between"
+      justify-lg="space-around"
+    >
       <sparkling-water-form />
       <sparkling-waters-list />
     </v-row>

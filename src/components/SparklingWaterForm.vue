@@ -1,94 +1,91 @@
 <template>
-  <fragment>
-    <v-col
-      align-self="center"
-      cols="10"
-      sm="8"
-      md="6"
-      lg="4"
-      xl="3"
-      class="mb-10 mb-lg-0"
-    >
-      <v-form ref="sparklingWaterForm" v-model="valid" lazy-validation>
-        <h3 class="text-h5 font-weight-medium text-center pb-4">
-          &#129380; Add a sparkling water &#10024;
-        </h3>
-        <v-text-field
-          filled
-          v-model="sparklingWater.flavor"
-          :rules="flavorRules"
-          label="Flavor"
-          required
-        ></v-text-field>
+  <v-col
+    align-self="center"
+    cols="10"
+    sm="8"
+    md="5"
+    lg="4"
+    xl="3"
+    class="mb-10 mb-lg-0"
+  >
+    <v-form ref="sparklingWaterForm" v-model="valid" lazy-validation>
+      <h3 class="text-h5 font-weight-medium text-center pb-4">
+        &#129380; Add a sparkling water &#10024;
+      </h3>
+      <v-text-field
+        filled
+        v-model="sparklingWater.flavor"
+        :rules="flavorRules"
+        label="Flavor"
+        required
+      ></v-text-field>
 
-        <v-select
-          filled
-          v-model="sparklingWater.brand"
-          :items="brands"
-          :rules="brandRules"
-          label="Brand"
-          required
-        ></v-select>
+      <v-select
+        filled
+        v-model="sparklingWater.brand"
+        :items="brands"
+        :rules="brandRules"
+        label="Brand"
+        required
+      ></v-select>
 
-        <v-text-field
-          v-if="sparklingWater.brand === 'Other'"
-          filled
-          v-model="sparklingWater.otherBrand"
-          :rules="brandRules"
-          label="Other Brand"
-          required
-        ></v-text-field>
+      <v-text-field
+        v-if="sparklingWater.brand === 'Other'"
+        filled
+        v-model="sparklingWater.otherBrand"
+        :rules="brandRules"
+        label="Other Brand"
+        required
+      ></v-text-field>
 
-        <v-select
-          filled
-          v-model.number="sparklingWater.rating"
-          :items="scores"
-          :rules="scoreRules"
-          label="Score"
-          required
-        ></v-select>
+      <v-select
+        filled
+        v-model.number="sparklingWater.rating"
+        :items="scores"
+        :rules="scoreRules"
+        label="Score"
+        required
+      ></v-select>
 
-        <v-textarea
-          filled
-          auto-grow
-          rows="3"
-          row-height="30"
-          v-model="sparklingWater.review"
-          :rules="reviewRules"
-          label="Review"
-          required
-        ></v-textarea>
+      <v-textarea
+        filled
+        auto-grow
+        rows="3"
+        row-height="30"
+        v-model="sparklingWater.review"
+        :rules="reviewRules"
+        label="Review"
+        required
+      ></v-textarea>
 
-        <div class="d-flex flex-wrap justify-space-between">
-          <v-btn
-            color="success"
-            type="submit"
-            :disabled="!valid"
-            @click.prevent="submit"
-          >
-            <span v-if="formEditMode === true"> Update Sparkling Water </span>
-            <span v-else> Add Sparkling Water </span>
-          </v-btn>
+      <div class="d-flex flex-wrap justify-space-between">
+        <v-btn
+          color="success"
+          type="submit"
+          :disabled="!valid"
+          @click.prevent="submit"
+        >
+          <span v-if="formEditMode === true"> Update Sparkling Water </span>
+          <span v-else> Add Sparkling Water </span>
+        </v-btn>
 
-          <v-btn color="info" @click.prevent="clear"> Reset </v-btn>
-          <v-btn
-            v-show="formEditMode === true"
-            width="100%"
-            class="mt-4"
-            color="info"
-            @click.prevent="cancelEditDrink(editItem)"
-          >
-            Cancel Edit
-          </v-btn>
-        </div>
-      </v-form>
-    </v-col>
-  </fragment>
+        <v-btn color="info" @click.prevent="clear"> Reset </v-btn>
+        <v-btn
+          v-show="formEditMode === true"
+          width="100%"
+          class="mt-4"
+          color="info"
+          @click.prevent="cancelEditDrink(editItem)"
+        >
+          Cancel Edit
+        </v-btn>
+      </div>
+    </v-form>
+  </v-col>
 </template>
 
 <script>
 import { mapState } from "vuex";
-import { Fragment } from "vue-fragment";
 
 export default {
   name: "SparklingWaterForm",
@@ -128,9 +125,6 @@ export default {
         (v) => (v && v.length < 100) || "Must be under 100 characters",
       ],
     };
-  },
-  components: {
-    Fragment,
   },
   computed: {
     ...mapState({
