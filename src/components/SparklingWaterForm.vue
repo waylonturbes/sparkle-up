@@ -1,16 +1,14 @@
 <template>
-  <v-card
-    :elevation="0"
-    color="rgba(0, 0, 0, 0)"
-    width="400px"
-    class="d-flex align-center pa-5"
+  <v-col
+    align-self="center"
+    cols="10"
+    sm="8"
+    md="5"
+    lg="4"
+    xl="3"
+    class="mb-10 mb-lg-0"
   >
-    <v-form
-      ref="sparklingWaterForm"
-      style="flex: auto"
-      v-model="valid"
-      lazy-validation
-    >
+    <v-form ref="sparklingWaterForm" v-model="valid" lazy-validation>
       <h3 class="text-h5 font-weight-medium text-center pb-4">
         &#129380; Add a sparkling water &#10024;
       </h3>
@@ -83,7 +81,7 @@
         </v-btn>
       </div>
     </v-form>
-  </v-card>
+  </v-col>
 </template>
 
 <script>

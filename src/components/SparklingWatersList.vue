@@ -1,5 +1,5 @@
 <template>
-  <div class="pa-5 mt-md-0 d-flex align-center justify-center">
+  <v-col align-self="center" cols="10" md="6" lg="7" xl="6">
     <v-card
       outlined
       elevation="3"
@@ -106,7 +106,7 @@
         </v-list-item-group>
       </v-list>
     </v-card>
-  </div>
+  </v-col>
 </template>
 
 <script>
