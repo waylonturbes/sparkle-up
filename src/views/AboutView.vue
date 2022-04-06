@@ -55,7 +55,7 @@
       ></v-spacer>
     </v-row>
     <v-row justify="center">
-      <v-col sm="8" cols="10">
+      <v-col sm="8" cols="10" align-self="center">
         <creator-card />
       </v-col>
     </v-row>
