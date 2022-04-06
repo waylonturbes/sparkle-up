@@ -38,7 +38,19 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Usage
 
-This project is a work in progress. If you go to the `/sparkle-up` route, you can use the _Add a sparkling water_ form to add new sparkling waters.
+If you go to the `/sparkling-waters` route, you can use the _Add a sparkling water_ form to add new sparkling waters.
+
+#### Sparkling Water Form
+
+| Inputs      | Types       | Required                            | Rules                        |
+| :---        | :---        | :---                                | :---                         |
+| Flavor      | String      | True                                | Must have a written value    |
+| Brand       | String      | True                                | Must have a selected value   |
+| Other Brand | String      | Only if **Brand** is set to _other_ | Must be under 30 characters  |
+| Score       | Number      | True                                | Must have a selected value   |
+| Review      | String      | True                                | Must be under 100 characters |
+
+#### Example Sparkling Water
 
 ```json
 {
@@ -48,6 +60,8 @@ This project is a work in progress. If you go to the `/sparkle-up` route, you ca
   "review": "The best sparkling water."
 }
 ```
+
+#### Editing a Sparkling Water
 
 If you wish to edit sparkling waters that have already been made, you can do so by clicking on the pencil icon on the right hand side of a sparkling water list item, and the _Add a sparkling water_ form will fill with all the sparkling water values.
 
