@@ -36,7 +36,7 @@
       </v-col>
     </v-row>
     <v-divider class="my-10"></v-divider>
-    <v-row justify="center" class="mt-10">
+    <v-row justify="center">
       <v-spacer
         v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.xl"
       ></v-spacer>
@@ -78,6 +78,7 @@
         v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.xl"
       ></v-spacer>
     </v-row>
+    <v-divider class="my-10"></v-divider>
   </v-container>
 </template>
 
