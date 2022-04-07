@@ -2,39 +2,14 @@
   <fragment>
     <v-row v-if="!error" justify="center">
       <v-spacer
+        class="order-sm-0"
         v-if="
           $vuetify.breakpoint.md ||
           $vuetify.breakpoint.lg ||
           $vuetify.breakpoint.xl
         "
       ></v-spacer>
-      <v-col class="align-self-center" cols="10" md="3">
-        <v-avatar size="128" class="border-1 align-self-center mb-1">
-          <img :src="creator.avatar" alt="Waylon Turbes" />
-        </v-avatar>
-        <h6 class="text-h6 d-block">{{ creator.name }}</h6>
-        <a
-          :href="creator.github_url"
-          target="_blank"
-          style="color: inherit; text-decoration: none"
-          ><span class="d-block text-white mb-2"
-            ><v-icon
-              :color="$vuetify.theme.dark ? 'white' : 'rgba(0, 0, 0, 0.87)'"
-              class="mr-1"
-              >{{ githubIcon }}</v-icon
-            >{{ creator.github_handle }}</span
-          ></a
-        >
-        <p class="text-subtitle1 mb-0">{{ creator.bio }}</p>
-      </v-col>
-      <v-spacer
-        v-if="
-          $vuetify.breakpoint.md ||
-          $vuetify.breakpoint.lg ||
-          $vuetify.breakpoint.xl
-        "
-      ></v-spacer>
-      <v-col cols="10" md="7" align-self="center">
+      <v-col cols="10" md="7" xl="5" align-self="center" order-sm="3">
         <h4 class="text-h4 mb-5">&#128075; Hello there! My name is Waylon</h4>
         <p class="text-justify">
           I am a Full Stack Web Developer fond of both front and back-end
@@ -54,6 +29,34 @@
         </p>
       </v-col>
       <v-spacer
+        class="order-sm-2"
+        v-if="
+          $vuetify.breakpoint.md ||
+          $vuetify.breakpoint.lg ||
+          $vuetify.breakpoint.xl
+        "
+      ></v-spacer>
+      <v-col align-self="center" order-sm="1" cols="10" md="3">
+        <v-avatar size="128" class="border-1 align-self-center mb-3">
+          <img :src="creator.avatar" alt="Waylon Turbes" />
+        </v-avatar>
+        <h6 class="text-h6 d-block">{{ creator.name }}</h6>
+        <a
+          :href="creator.github_url"
+          target="_blank"
+          style="text-decoration: none"
+          ><span class="d-block mb-1"
+            ><v-icon
+              :color="$vuetify.theme.dark ? 'white' : 'rgba(0, 0, 0, 0.87)'"
+              class="mr-1"
+              >{{ githubIcon }}</v-icon
+            >{{ creator.github_handle }}</span
+          ></a
+        >
+        <p class="text-subtitle1 mb-0">{{ creator.bio }}</p>
+      </v-col>
+      <v-spacer
+        class="order-sm-4"
         v-if="
           $vuetify.breakpoint.md ||
           $vuetify.breakpoint.lg ||
