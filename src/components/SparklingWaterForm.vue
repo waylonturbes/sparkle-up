@@ -102,6 +102,7 @@ export default {
       },
       flavorRules: [
         (v) => !!v || "Flavor is required",
+        (v) => !/lemoncello/i.test(v) || "Pick a better flavor :P",
         (v) => (v && v.length < 100) || "Must be under 100 characters",
       ],
       scores: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
