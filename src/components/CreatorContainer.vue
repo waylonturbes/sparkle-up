@@ -13,7 +13,10 @@
           <img :src="creator.avatar" alt="Waylon Turbes" />
         </v-avatar>
         <h6 class="text-h6 d-block">{{ creator.name }}</h6>
-        <a href="github_url" style="color: inherit; text-decoration: none"
+        <a
+          :href="creator.github_url"
+          target="_blank"
+          style="color: inherit; text-decoration: none"
           ><span class="d-block text-white mb-2"
             ><v-icon
               :color="$vuetify.theme.dark ? 'white' : 'rgba(0, 0, 0, 0.87)'"
