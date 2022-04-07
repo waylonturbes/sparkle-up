@@ -1,7 +1,14 @@
 <template>
   <fragment>
-    <v-row v-if="!error" justify="space-around">
-      <v-col class="align-self-center" cols="3">
+    <v-row v-if="!error" justify="center">
+      <v-spacer
+        v-if="
+          $vuetify.breakpoint.md ||
+          $vuetify.breakpoint.lg ||
+          $vuetify.breakpoint.xl
+        "
+      ></v-spacer>
+      <v-col class="align-self-center" cols="10" md="3">
         <v-avatar size="128" class="border-1 align-self-center mb-1">
           <img :src="creator.avatar" alt="Waylon Turbes" />
         </v-avatar>
@@ -17,7 +24,14 @@
         >
         <p class="text-subtitle1 mb-0">{{ creator.bio }}</p>
       </v-col>
-      <v-col cols="6" align-self="center">
+      <v-spacer
+        v-if="
+          $vuetify.breakpoint.md ||
+          $vuetify.breakpoint.lg ||
+          $vuetify.breakpoint.xl
+        "
+      ></v-spacer>
+      <v-col cols="10" md="7" align-self="center">
         <h4 class="text-h4 mb-5">&#128075; Hello there! My name is Waylon</h4>
         <p class="text-justify">
           I am a Full Stack Web Developer fond of both front and back-end
@@ -36,6 +50,13 @@
           opportunities for learning as much as possible.
         </p>
       </v-col>
+      <v-spacer
+        v-if="
+          $vuetify.breakpoint.md ||
+          $vuetify.breakpoint.lg ||
+          $vuetify.breakpoint.xl
+        "
+      ></v-spacer>
     </v-row>
     <v-row justify="center" v-else>
       <v-col align-self="center" cols="10">
