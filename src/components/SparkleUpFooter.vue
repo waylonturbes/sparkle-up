@@ -25,8 +25,14 @@
 
       <v-card-text class="pt-0 text-body1">
         I hope you enjoyed using Sparkle Up as much as I enjoyed building it!
-        This app was built with Vue & Vuetify for experimenting purposes.
-        <br />If you want to, you can find me on the following platforms.
+        This is my first project using Vue and Vuetify, and so all critisism is
+        welcomed.
+      </v-card-text>
+
+      <v-card-text class="pt-0 text-body1">
+        To see the projects source code, click on the little GitHub icon above.
+        If you come across any problems while using the app, feel free to open a
+        new issue. Thank you for trying out my app!
       </v-card-text>
 
       <v-divider></v-divider>
@@ -48,7 +54,10 @@ export default {
           svg: "mdi-linkedin",
           link: "https://www.linkedin.com/in/waylon-turbes/",
         },
-        { svg: "mdi-github", link: "https://github.com/waylonturbes" },
+        {
+          svg: "mdi-github",
+          link: "https://github.com/waylonturbes/sparkle-up",
+        },
       ],
     };
   },
