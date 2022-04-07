@@ -8,7 +8,7 @@
       <v-app-bar-title
         v-text="'Sparkle Up'"
         class="font-weight-medium text-uppercase pl-sm-0"
-        style="letter-spacing: 0.2rem; font-size: 2.125rem"
+        style="letter-spacing: 0.1rem"
       ></v-app-bar-title>
 
       <v-spacer></v-spacer>
