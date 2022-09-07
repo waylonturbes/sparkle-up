@@ -25,14 +25,12 @@
 
       <v-card-text class="pt-0 text-body1">
         I hope you enjoyed using Sparkle Up as much as I enjoyed building it!
-        This is my first project using Vue and Vuetify, and so all critisism is
-        welcomed.
+        This is my first project using Vue and Vuetify.
       </v-card-text>
 
       <v-card-text class="pt-0 text-body1">
-        To see the projects source code, click on the little GitHub icon above.
-        If you come across any problems while using the app, feel free to open a
-        new issue. Thank you for trying out my app!
+        To see the projects source code, click on the little GitHub icon above. 
+        Thank you for trying out my app!
       </v-card-text>
 
       <v-divider></v-divider>
