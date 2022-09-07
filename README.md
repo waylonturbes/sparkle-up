@@ -67,10 +67,6 @@ If you wish to edit sparkling waters that have already been made, you can do so 
 
 &#10024; Sparkle Up &#10024;
 
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. This app is a work in progress, so many features and fixes can/will be made.
-
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
